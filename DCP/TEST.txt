@@ -1,0 +1,151 @@
+
+treeNode* deleteFromBST(struct treeNode* root, int dataToRemove) {
+	if (root == nullptr)
+		return root;
+	else if (dataToRemove < root->data)
+		root->left = deleteFromBST(root->left, dataToRemove);
+	else if (dataToRemove > root->data)
+		root->right = deleteFromBST(root->right, dataToRemove);
+	else //Data To Delete == ROOT
+	{
+		//Check the NODE Status
+		//1. Leaf node 
+		if (root->left == nullptr && root->right == nullptr) {
+			free(root);
+			root = nullptr;
+		}
+		else if (root->left == nullptr && root->right != nullptr){
+			treeNode* temp = root;
+			root = root->right;
+			free(temp);
+		}
+		else if (root->right == nullptr && root->left != nullptr) {
+			treeNode* temp = root;
+			root = root->left;
+			free(temp);
+		}
+		else if (root->right != nullptr && root->left != nullptr) {
+			treeNode* temp = root->right;
+			while (temp->left != nullptr) temp = temp->left;
+			root->data = temp->data;
+			root->right = deleteFromBST(root->right, temp->data);
+		}
+	}
+	return root;
+}
+struct treeNode* insert(struct treeNode* node, int key)
+{
+	/* If the tree is empty, return a new node */
+	if (node == NULL)
+		return new treeNode(key);
+
+	/* Otherwise, recur down the tree */
+	if (key < node->data)
+		node->left = insert(node->left, key);
+	else
+		node->right = insert(node->right, key);
+
+	/* return the (unchanged) node pointer */
+	return node;
+}
+inOrder(root);
+	cout << "\n";
+	root = deleteFromBST(root, 49);
+	inOrder(root);
+	cout << "\n";
+	root = deleteFromBST(root, 22);
+	inOrder(root);
+	cout << "\n";
+	root = deleteFromBST(root, 46);
+	inOrder(root);
+
+
+struct node
+{
+	struct node* next;
+	struct node* child;
+	std::string data;
+	node() {
+		next = NULL;
+		child = NULL;
+	}
+};
+
+bool isSameBinaryTree(struct treeNode* t1,
+					  struct treeNode* t2) {
+	if (t1 == NULL && t2 == NULL) 
+		return true;
+	
+	if (t1 == NULL || t2 == NULL)
+		return false;
+
+	if (t1->data == t2->data &&
+		isSameBinaryTree(t1->left, t2->left) &&
+		isSameBinaryTree(t1->right, t2->right))
+		return true;
+}
+
+
+/*
+void printtree_r(struct node* root, int depth) {
+	int i;
+	while (root) {
+		if (root->child) {
+			for (i =0; i < depth * 3; i++)
+				printf(" ");
+
+			printf("{\n");
+
+			printtree_r(root->child, depth + 1);
+
+			for (i = 0; i < depth * 3; i++)
+				printf(" ");
+
+			printf("{\n");
+
+			for (i = 0; i < depth * 3; i++)
+				printf(" ");
+
+			printf("%s\n", root->data.c_str());
+
+			root = root->next;
+		}
+	}
+}
+
+void printtree(node* root) {
+	printtree_r(root, 0);
+}
+
+*/
+/*
+//Tree1
+	struct treeNode* root = new treeNode(3);
+	root->left = new treeNode(2);
+	root->right = new treeNode(5);
+	root->left->left = new treeNode(1);
+	root->left->right = new treeNode(4);
+	//Tree2
+	struct treeNode* root2 = new treeNode(3);
+	root2->left = new treeNode(2);
+	root2->right = new treeNode(5);
+	root2->left->left = new treeNode(1);
+	root2->left->right = new treeNode(4);
+	
+	cout << isSameBinaryTree(root, root2) << endl;
+*/
+/*
+	GPOE d;
+	vector<int> V = {1,2,3,4,5};
+	vector<int> res = d.solve2(V);
+	dump(res);
+
+	node MM;
+	node* n = &MM;
+	n->data = "T1";
+	n->next = (node*) malloc(sizeof(node*));
+	n->data = "T2";
+	
+
+	printtree(n);
+*/

@@ -1,0 +1,18 @@
+
+void StringSum(std::string strInput, int& sum,int len) {
+	
+	if (sum <= 9 && len ==0)
+		return;
+	
+	if (len == 0 && sum > 0)
+	{
+		std::string convertedNewSum = std::to_string(sum);
+		sum = 0;
+		StringSum(convertedNewSum,sum, convertedNewSum.length());
+	}
+	else
+	{
+		sum += (int)(strInput[len - 1] - 48);
+		StringSum(strInput.substr(0, len - 1), sum, len - 1);
+	}
+}

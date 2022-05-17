@@ -1,0 +1,38 @@
+std::string cleanUp(std::string s)
+{
+    string sTemp = ""; int i =0;
+    while(i < s.length()){
+        if(isalnum(s[i])){
+            if (isupper(s[i])){
+                sTemp+=tolower(s[i]);
+            }
+            else{
+                sTemp+=s[i]; 
+            } 
+        }
+        i++;
+    }
+    return sTemp;
+}
+
+bool is_palindrome(std::string s) {
+    if(s.length() == 0 || s.length() ==1)
+        return true;
+        
+    string pal = cleanUp(s);
+    int left = 0 , right = pal.length() -1;
+    
+    while(left < right) {
+        if(pal[left] == pal[right])
+        {
+            left++;
+            right--;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    return true;
+}
