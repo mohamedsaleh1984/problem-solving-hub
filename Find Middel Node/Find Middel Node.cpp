@@ -70,6 +70,10 @@ public:
     int findMiddleElement() {
         SinglyLinkedListNode* copyHead = head;
         SinglyLinkedListNode* nextNextHead = head;
+        if (copyHead->next == nullptr)
+            return copyHead->data;
+
+
         if (nextNextHead->next == nullptr|| nextNextHead->next->next == nullptr)
         {
             cout << "At least 3 items in the list required to perform." << endl;
