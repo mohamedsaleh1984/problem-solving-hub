@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 //https://leetcode.com/problems/reverse-vowels-of-a-string/
-//TODO:Correct it
 
 class Solution {
 public:

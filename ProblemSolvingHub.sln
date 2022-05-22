@@ -269,6 +269,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Set Matrix Zeroes", "Set Ma
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remove Nth Node From End of List", "Remove Nth Node From End of List\Remove Nth Node From End of List.vcxproj", "{49FCE98F-BC2E-49D1-8313-768E9E6FE129}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remove Nth Node", "Remove Nth Node\Remove Nth Node.vcxproj", "{CD7BE169-976A-4A4C-99FD-4EA016A0080B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1557,6 +1559,18 @@ Global
 		{49FCE98F-BC2E-49D1-8313-768E9E6FE129}.Release|x64.Build.0 = Release|x64
 		{49FCE98F-BC2E-49D1-8313-768E9E6FE129}.Release|x86.ActiveCfg = Release|Win32
 		{49FCE98F-BC2E-49D1-8313-768E9E6FE129}.Release|x86.Build.0 = Release|Win32
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|Any CPU.Build.0 = Debug|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|x64.ActiveCfg = Debug|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|x64.Build.0 = Debug|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|x86.ActiveCfg = Debug|Win32
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Debug|x86.Build.0 = Debug|Win32
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|Any CPU.ActiveCfg = Release|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|Any CPU.Build.0 = Release|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|x64.ActiveCfg = Release|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|x64.Build.0 = Release|x64
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|x86.ActiveCfg = Release|Win32
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1671,6 +1685,7 @@ Global
 		{33E7C9B3-E26E-442A-958E-E141D95F7380} = {C64C23BC-4431-40E1-8A18-610A91638B5C}
 		{55382301-0C30-4D9C-B735-6F12AD254288} = {D8067A99-8744-42B4-8CF4-3F3A1356AAEE}
 		{49FCE98F-BC2E-49D1-8313-768E9E6FE129} = {D8067A99-8744-42B4-8CF4-3F3A1356AAEE}
+		{CD7BE169-976A-4A4C-99FD-4EA016A0080B} = {D8067A99-8744-42B4-8CF4-3F3A1356AAEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BD1BF28-3E5C-448B-8432-8C66D95301BE}

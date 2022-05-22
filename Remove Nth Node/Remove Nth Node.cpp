@@ -9,48 +9,31 @@ struct ListNode {
 	ListNode(int x) : val(x), next(nullptr) {}
 	ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
-ListNode* createDummyList();
-void printList(ListNode* head);
- //https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/ 
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
 	if (n == 1 && head->next == nullptr)
 		return nullptr;
+	if (n == 1 && head->next != nullptr)
+		return head->next;
 
-	ListNode* dummyNode = new ListNode(INT_MAX, head);
-	ListNode* slowPtr = dummyNode;
-	ListNode* fastPtr = head; 
 
-	while (n != 0) { 
-		fastPtr = fastPtr->next;
-		--n;
-	}
+	int counter = 1;
+	ListNode* headCpy = head;
+	ListNode* nodeModifier = head;
+	ListNode* prevNode = head;
 
-	while (fastPtr != nullptr)
+	while (nodeModifier != nullptr)
 	{
-		slowPtr = slowPtr->next;
-		fastPtr = fastPtr->next;
+		if (counter == n)
+		{
+			prevNode->next = nodeModifier->next;
+			break;
+		}
+		prevNode = nodeModifier;
+		nodeModifier = nodeModifier->next;
+		counter++;
 	}
-
-	slowPtr->next = slowPtr->next->next;
-
-	return dummyNode->next;
-}
-
-
-
-
-int main()
-{
-	ListNode* head = createDummyList(); 
-	printList(head);
-
-	ListNode* head2 = createDummyList();
-	
-	ListNode* result = removeNthFromEnd(head2, 1); 
-	printList(result);
-
-	return 0;
+	return headCpy;
 }
 
 
@@ -76,5 +59,19 @@ void printList(ListNode* head) {
 		cout << head->val << " ";
 		head = head->next;
 	}
-	cout << endl;
+}
+
+int main()
+{
+	ListNode* head = createDummyList();
+	cout << "----------- before Remove nth elem -----------------\n";
+	printList(head);
+
+	ListNode* head2 = createDummyList();
+
+	ListNode* result = removeNthFromEnd(head2, 2);
+	cout << "\n----------- after Remove nth elem -----------------\n";
+	printList(result);
+
+	return 0;
 }
