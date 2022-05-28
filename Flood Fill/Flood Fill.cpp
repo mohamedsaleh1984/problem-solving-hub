@@ -8,17 +8,25 @@ using namespace std;
 
 //https://leetcode.com/problems/flood-fill/  
 class Solution {
+private:
+	int ROWS;
+	int COLS;
+	vector<vector<int>> image;
+	vector<vector<bool>> visited = {};
+	int currentColor;
 public:
-	vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
-		int currentColor = image[sr][sc];
-		int ROWS = image.size();
-		int COLS = image[0].size();
-
-		vector<vector<bool>> visited = {};
+	Solution(vector<vector<int>>& image, int sr, int sc) {
+		this->image = image;
+		ROWS = image.size();
+		COLS = image[0].size();
+		currentColor = image[sr][sc];
 		for (int i = 0; i < image.size(); i++) {
 			vector<bool> bTemp(COLS);
 			visited.push_back(bTemp);
 		}
+	}
+
+	vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
 		queue<vector<int>> negb;
 		negb.push({ sr,sc });
 		while (negb.size()) {
@@ -43,12 +51,11 @@ public:
 				negb.push({ row - 1, col });
 			//down
 			if (row + 1 < ROWS && image[row + 1][col] == currentColor && visited[row + 1][col] == false)
-				negb.push({row + 1, col});
+				negb.push({ row + 1, col });
 		}
 		return image;
 	}
 };
-
 
 int main()
 {
@@ -58,13 +65,13 @@ int main()
 	*/
 	vector<vector<int>> image = { {0,0,0}, {0,0, 0} };
 	int sr = 0, sc = 0, newColor = 2;
-	Solution sol;
+	Solution sol(image,sr,sc);
 	image = sol.floodFill(image, sr, sc, newColor);
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 3; j++)
 			cout << image[i][j] << " ";
 		cout << endl;
 	}
-	
+
 	return 0;
 }
