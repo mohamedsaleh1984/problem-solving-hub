@@ -2,10 +2,11 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
+#include <iomanip>       
 using namespace std;
+//https://leetcode.com/problems/coloring-a-border/
 
-//https://leetcode.com/problems/max-area-of-island/
-	class Solution {
+class Solution {
 private:
 	vector<vector<bool>> visited;
 	vector<vector<int>> grid;
@@ -47,34 +48,49 @@ public:
 		return 0;
 	}
 
-	vector<vector<int>>  getNeighbour(int row, int col) {
+	vector<vector<int>> colorBorder(vector<vector<int>>& grid, int row, int col, int color) {
+		return grid;
+	}
+
+	vector<vector<int>>  getNeighbour(int row, int col, int color) {
 		vector<vector<int>> negb;
-		if (col + 1 < COLS && visited[row][col + 1] == false && grid[row][col + 1] == 1) {
+		if (col + 1 < COLS && visited[row][col + 1] == false && grid[row][col + 1] == color) {
 			negb.push_back({ row, col + 1 });
 		}
 
 		//Left
-		if (col - 1 >= 0 && visited[row][col - 1] == false && grid[row][col - 1] == 1) {
+		if (col - 1 >= 0 && visited[row][col - 1] == false && grid[row][col - 1] == color) {
 			negb.push_back({ row, col - 1 });
 		}
 
 		//up
-		if (row - 1 >= 0 && visited[row - 1][col] == false && grid[row - 1][col] == 1) {
+		if (row - 1 >= 0 && visited[row - 1][col] == false && grid[row - 1][col] == color) {
 			negb.push_back({ row - 1, col });
 		}
 
 		//down
-		if (row + 1 < ROWS && visited[row + 1][col] == false && grid[row + 1][col] == 1) {
+		if (row + 1 < ROWS && visited[row + 1][col] == false && grid[row + 1][col] == color) {
 			negb.push_back({ row + 1, col });
 		}
 		return negb;
+	}
+
+	void colorComponent(vector<vector<int>> component, int color) {
+		for (int i = 0; i < component.size(); i++) {
+			grid[component[i][0]][component[i][1]] = color;
+		}
 	}
 
 	bool IsVisisted(vector<int> vec) {
 		return visited[vec[0]][vec[1]];
 	}
 
-	void computeIslandWidth(int row, int col, int& width) {
+	void findComponent(int row, int col, int color) {
+		getNeighbour(row, col, color);
+
+	}
+
+	/*void computeIslandWidth(int row, int col, int& width) {
 		width++;
 		visited[row][col] = true;
 		vector<vector<int>> negb = getNeighbour(row, col);
@@ -84,18 +100,14 @@ public:
 			if (!IsVisisted(check))
 				computeIslandWidth(check[0], check[1], width);
 		}
-	}
+	}*/
+
+
 };
+
 
 int main()
 {
-	/*vector<vector<int>> grid= { 
-								{1,1,0,0,0},
-								{1,1,0,0,0},
-								{0,0,0,1,1},
-								{0,0,0,1,1} 
-								};
-								*/
 	vector<vector<int>> grid = { {1,1,0,1,0},
 								 {1,0,1,1,0},
 								 {1,1,1,1,1},
@@ -106,6 +118,14 @@ int main()
 								 {0,1,1,1,0},
 								 {0,1,0,1,0} };
 	Solution s;
-	cout << s.maxAreaOfIsland(grid) << endl;
+	int row = 0, col = 0, color = 3;
+	grid = s.colorBorder(grid, row, col, color);
+	for (int i = 0; i < grid.size(); i++) {
+		for (int j = 0; j < grid[i].size(); j++) {
+			cout << setw(2) << grid[i][j] << " ";
+		}
+		cout << endl;
+	}
+
 	return 0;
 }
