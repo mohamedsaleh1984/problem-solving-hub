@@ -89,20 +89,6 @@ public:
 		getNeighbour(row, col, color);
 
 	}
-
-	/*void computeIslandWidth(int row, int col, int& width) {
-		width++;
-		visited[row][col] = true;
-		vector<vector<int>> negb = getNeighbour(row, col);
-		vector<vector<int>>::iterator it;
-		for (it = negb.begin(); it != negb.end(); it++) {
-			vector<int> check = *it;
-			if (!IsVisisted(check))
-				computeIslandWidth(check[0], check[1], width);
-		}
-	}*/
-
-
 };
 
 

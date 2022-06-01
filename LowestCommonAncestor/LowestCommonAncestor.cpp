@@ -3,18 +3,18 @@ using namespace std;
 
 class Node {
 public:
-	Node(int data) {
-		this->data = data;
+	Node(int val) {
+		this->val = val;
 		this->left = NULL;
 		this->right = NULL;
 	}
 	Node* left;
 	Node* right;
 	int getDate() {
-		return this->data;
+		return this->val;
 	}
 private:
-	int data;
+	int val;
 };
 
 
