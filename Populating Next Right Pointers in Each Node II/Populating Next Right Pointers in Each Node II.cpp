@@ -3,7 +3,10 @@
 #include <queue>
 #include <stack>
 using namespace std;
-//https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
+//https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+
+
 
 class Node {
 public:
@@ -18,6 +21,9 @@ public:
 };
 
 class Solution {
+private:
+    vector<int> nodesPerLevel;
+
 public:
     Node* connect(Node* root) {
         if (root == nullptr)
@@ -27,22 +33,29 @@ public:
         stack<Node*> stkLinker;
         queue<Node*> myQueue;
 
-        int powInd = 0;
-        int nodesToRemove = pow(2, powInd);
+        nodesPerLevel.push_back(1);
+        int index = 0;
+
         myQueue.push(rootPtr);
 
         while (!myQueue.empty()) {
-            if (nodesToRemove == 1) {
+            if (index == 0) {
                 Node* myRoot = myQueue.front();
                 myRoot->next = nullptr;
+                int nodesInNextLevel = 0;
                 if (myRoot->left) {
                     myQueue.push(myRoot->left);
-                    myQueue.push(myRoot->right);
-
+                    nodesInNextLevel++;
                     stkLinker.push(myRoot->left);
+                }
+                if (myRoot->right) {
+                    myQueue.push(myRoot->right);
+                    nodesInNextLevel++;
                     stkLinker.push(myRoot->right);
                 }
+                index++;
                 myQueue.pop();
+                nodesPerLevel.push_back(nodesInNextLevel);
             }
             else
             {
@@ -55,27 +68,33 @@ public:
                     topNode->next = ptrNextNode;
                     ptrNextNode = topNode;
                 }
+
+                int nodesToRemove = nodesPerLevel[index];
                 //scan the nodes in the level and add them to the queue, stack for next feed.
+                int nodesInNextLevel = 0;
                 while (nodesToRemove--) {
-                   Node* levlNode = myQueue.front();
 
-                   if (levlNode->left) {
-                       myQueue.push(levlNode->left);
-                       myQueue.push(levlNode->right);
+                    Node* levlNode = myQueue.front();
 
-                       stkLinker.push(levlNode->left);
-                       stkLinker.push(levlNode->right);
-                   }
-                   myQueue.pop();
+                    if (levlNode->left) {
+                        myQueue.push(levlNode->left);
+                        nodesInNextLevel++;
+                        stkLinker.push(levlNode->left);
+                    }
+                    if (levlNode->right) {
+                        myQueue.push(levlNode->right);
+                        nodesInNextLevel++;
+                        stkLinker.push(levlNode->right);
+                    }
+
+                    myQueue.pop();
                 }
+                nodesPerLevel.push_back(nodesInNextLevel);
+                index++;
             }
-
-            powInd++;
-            nodesToRemove = pow(2, powInd);
         }
         return rootPtr;
     }
-
 };
 
 
@@ -88,10 +107,10 @@ int main()
     Node* n3 = new Node(3);
     Node* n2 = new Node(2);
     Node* root = new Node(1);
-    
+
     root->left = n2;
     root->right = n3;
-    
+
     n2->left = n4;
     n2->right = n5;
 

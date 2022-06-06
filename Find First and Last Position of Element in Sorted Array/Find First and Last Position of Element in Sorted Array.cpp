@@ -3,13 +3,35 @@
 using namespace std;
 
 //https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-//TODO: Write it
-
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int> result;
+        int start = -1, end = -1;
 
+        int searchResult = -1;
+
+        searchResult = binary_search(nums, target);
+        
+        if (searchResult != -1) {
+            start = end = searchResult;
+
+            while (start >= 0 && nums[start] == target)
+                start--;
+
+            while (end < nums.size() && nums[end] == target)
+                end++;
+            result.push_back(start+1);
+            result.push_back(end-1);
+        }
+        if (searchResult == -1) {
+            result.push_back(-1);
+            result.push_back(-1);
+
+        }
+        return result;
     }
+
     int binary_search(std::vector<int> arr, int target) {
         int result = -1;
         int l = 0, r = arr.size() - 1;
