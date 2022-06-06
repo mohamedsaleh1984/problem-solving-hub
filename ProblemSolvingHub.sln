@@ -315,6 +315,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remove Linked List Elements
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Populating Next Right Pointers in Each Node II", "Populating Next Right Pointers in Each Node II\Populating Next Right Pointers in Each Node II.vcxproj", "{08F2D002-11C6-42C5-B618-92F87EDD193A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Add Binary", "Add Binary\Add Binary.vcxproj", "{64F06412-0A54-47B1-8C1B-C6A27623AEA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1779,6 +1781,18 @@ Global
 		{08F2D002-11C6-42C5-B618-92F87EDD193A}.Release|x64.Build.0 = Release|x64
 		{08F2D002-11C6-42C5-B618-92F87EDD193A}.Release|x86.ActiveCfg = Release|Win32
 		{08F2D002-11C6-42C5-B618-92F87EDD193A}.Release|x86.Build.0 = Release|Win32
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|Any CPU.Build.0 = Debug|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|x64.ActiveCfg = Debug|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|x64.Build.0 = Debug|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|x86.ActiveCfg = Debug|Win32
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Debug|x86.Build.0 = Debug|Win32
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|Any CPU.ActiveCfg = Release|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|Any CPU.Build.0 = Release|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|x64.ActiveCfg = Release|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|x64.Build.0 = Release|x64
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|x86.ActiveCfg = Release|Win32
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1914,6 +1928,7 @@ Global
 		{BC5D9AD2-42A2-471D-8E41-69BB4A9BB4D1} = {C64C23BC-4431-40E1-8A18-610A91638B5C}
 		{BB5A615B-AA3E-43B2-A618-B7BB756E88E8} = {D8067A99-8744-42B4-8CF4-3F3A1356AAEE}
 		{08F2D002-11C6-42C5-B618-92F87EDD193A} = {17B249B1-287E-45E7-BBDF-AC9F3646EA94}
+		{64F06412-0A54-47B1-8C1B-C6A27623AEA2} = {C64C23BC-4431-40E1-8A18-610A91638B5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BD1BF28-3E5C-448B-8432-8C66D95301BE}
