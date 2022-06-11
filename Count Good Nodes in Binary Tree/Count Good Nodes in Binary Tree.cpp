@@ -17,9 +17,38 @@ struct TreeNode {
 	TreeNode* right;
 };
 
-int goodNodes(TreeNode* root) {
-    
-}
+class Solution {
+public:
+    int goodNodes(TreeNode* root) {
+        int goodNodesCount = 1;
+        goodNodesHelper(root, true, goodNodesCount);
+        return goodNodesCount;
+    }
+
+    void goodNodesHelper(TreeNode* root, bool isGood, int& nums) {
+        if (root == nullptr) {
+            return;
+        }
+
+        if (root->left != nullptr && root->left->val > root->val) {
+           return  goodNodesHelper(root->left, true, nums + 1);
+        }
+        else {
+            return  goodNodesHelper(root->left, false, nums);
+        }
+
+        if (root->right != nullptr && root->right->val > root->val) {
+            return  goodNodesHelper(root->right, true, nums + 1);
+        }
+        else {
+            return  goodNodesHelper(root->right, false, nums);
+        }
+
+
+    }
+};
+
+
 
 /* utility that allocates a new node with the
 given data and NULL left and right pointers. */

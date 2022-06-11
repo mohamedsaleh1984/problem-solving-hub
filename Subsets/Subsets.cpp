@@ -4,7 +4,8 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+//
+//TODO: Correct it
 void perm(vector<int>& perm, vector<int>& selected, vector<int>& list) {
 
     if (perm.size() == list.size())
