@@ -18,7 +18,7 @@ public:
 
         longestCommonPrefixLookup(strs, 0, pref);*/
 
-        return pref;
+        return "";
     }
 
     void longestCommonPrefixLookup(vector<string>& strs, int currentIndex, string& pref) {

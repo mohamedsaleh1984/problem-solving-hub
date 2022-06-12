@@ -11,9 +11,7 @@ public:
 
 int main()
 {
-    uint32_t test = 10101010;
-    uint32_t test = 10101010;
-    cout <<  << endl;
+  
 
     return 0;
 }

@@ -4,7 +4,7 @@
 #include <queue>
 using namespace std;
  
-//
+//https://leetcode.com/problems/number-of-closed-islands/
 //TODO: Fix
 class Solution {
 private:
@@ -28,23 +28,8 @@ public:
 		COLS = grid[0].size();
 	}
 
-	int numIslands(vector<vector<char>>& grid) {
-		init(grid);
- 
-		for (int i = 0; i < grid.size(); i++) {
-			for (int j = 0; j < grid[i].size(); j++) {
-				if (grid[i][j] == '1' && visited[i][j] == false) {
-				 
-					computeIsland(i, j);
-				 
-				}
-			}
-		}
-		
-	}
-
 	int closedIsland(vector<vector<int>>& grid) {
-
+		return 0;
 	}
 
 	vector<vector<int>>  getNeighbour(int row, int col) {
@@ -96,7 +81,7 @@ int main()
 					  {'0','0','1','0','0'},
 					  {'0','0','0','1','1'} };
 	Solution s;
-	cout << s.numIslands(grid) << endl;
+ 
 	return 0;
 }
 

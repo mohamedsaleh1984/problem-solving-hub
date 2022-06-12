@@ -1,6 +1,3 @@
-// Count Good Nodes in Binary Tree.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <string>
 #include <queue>
@@ -8,8 +5,10 @@
 #include <set>
 using namespace std;
 
-//TODO: implement the algo
 //https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+/*
+Runtime: 161 ms, faster than 65.61% of C++ online submissions for Count Good Nodes in Binary Tree.
+*/
 
 struct TreeNode {
 	int val;
@@ -19,34 +18,29 @@ struct TreeNode {
 
 class Solution {
 public:
-    int goodNodes(TreeNode* root) {
-        int goodNodesCount = 1;
-        goodNodesHelper(root, true, goodNodesCount);
-        return goodNodesCount;
-    }
+	int goodNodes(TreeNode* root) {
+		int currentMax = root->val;
+		int mxLeft = goodNodesHelper(root->left, currentMax);
+		int mxRight = goodNodesHelper(root->right, currentMax);
+		return mxLeft + mxRight+1;
+	}
 
-    void goodNodesHelper(TreeNode* root, bool isGood, int& nums) {
-        if (root == nullptr) {
-            return;
-        }
+	int goodNodesHelper(TreeNode* root, int currentMax) {
+		if (root == nullptr) {
+			return 0;
+		}
 
-        if (root->left != nullptr && root->left->val > root->val) {
-           return  goodNodesHelper(root->left, true, nums + 1);
-        }
-        else {
-            return  goodNodesHelper(root->left, false, nums);
-        }
-
-        if (root->right != nullptr && root->right->val > root->val) {
-            return  goodNodesHelper(root->right, true, nums + 1);
-        }
-        else {
-            return  goodNodesHelper(root->right, false, nums);
-        }
-
-
-    }
+		if (root->val >= currentMax ) {
+			currentMax = root->val;
+			return 1 + goodNodesHelper(root->left, currentMax) + goodNodesHelper(root->right, currentMax);
+		}
+		else {
+			return  goodNodesHelper(root->left, currentMax) + goodNodesHelper(root->right, currentMax);
+		}
+	}
 };
+
+
 
 
 
@@ -54,30 +48,25 @@ public:
 given data and NULL left and right pointers. */
 TreeNode* newnode(int data)
 {
-    TreeNode* Node = new TreeNode();
-    Node->val = data;
-    Node->left = NULL;
-    Node->right = NULL;
+	TreeNode* Node = new TreeNode();
+	Node->val = data;
+	Node->left = NULL;
+	Node->right = NULL;
 
-    return(Node);
+	return(Node);
 }
 
 
 int main()
 {
-    //TreeNode* root = newnode(3);
-    //root->left = newnode(1);
-    //root->right = newnode(4);
-    //root->left->left = newnode(3);
-    //root->right->right = newnode(5);
-    //root->right->left = newnode(1);
+	TreeNode* root = newnode(5);
+	root->left = newnode(4);
+	root->right = newnode(6);
 
-    TreeNode* root = newnode(2);
-    root->right= newnode(4);
-    root->right->left = newnode(10);
-    root->right->left->left = newnode(8);
-    root->right->left->right = newnode(4);
+	root->left->left = newnode(3);
+	root->left->right = newnode(8);
 
-    cout << goodNodes(root) << endl;
+	Solution s;
+	cout << s.goodNodes(root);
+	return 0;
 }
- 

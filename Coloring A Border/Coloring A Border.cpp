@@ -5,7 +5,7 @@
 #include <iomanip>       
 using namespace std;
 //https://leetcode.com/problems/coloring-a-border/
-
+//TODO: FXI
 class Solution {
 private:
 	vector<vector<bool>> visited;
@@ -28,7 +28,7 @@ public:
 		COLS = grid[0].size();
 	}
 
-	int maxAreaOfIsland(vector<vector<int>> grid) {
+	/*int maxAreaOfIsland(vector<vector<int>> grid) {
 		init(grid);
 		vector<int> islandSize = {};
 		for (int i = 0; i < grid.size(); i++) {
@@ -46,7 +46,7 @@ public:
 			return islandSize[islandSize.size() - 1];
 		}
 		return 0;
-	}
+	}*/
 
 	vector<vector<int>> colorBorder(vector<vector<int>>& grid, int row, int col, int color) {
 		return grid;

@@ -319,6 +319,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bit", "Bit", "{BA2F666D-FA7
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Number of 1 Bits", "Number of 1 Bits\Number of 1 Bits.vcxproj", "{CD8EF10B-F940-4806-9DAD-ABD743C38466}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serialize and Deserialize Binary Tree", "Serialize and Deserialize Binary Tree\Serialize and Deserialize Binary Tree.vcxproj", "{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1819,6 +1821,18 @@ Global
 		{CD8EF10B-F940-4806-9DAD-ABD743C38466}.Release|x64.Build.0 = Release|x64
 		{CD8EF10B-F940-4806-9DAD-ABD743C38466}.Release|x86.ActiveCfg = Release|Win32
 		{CD8EF10B-F940-4806-9DAD-ABD743C38466}.Release|x86.Build.0 = Release|Win32
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|Any CPU.Build.0 = Debug|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|x64.ActiveCfg = Debug|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|x64.Build.0 = Debug|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Debug|x86.Build.0 = Debug|Win32
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|Any CPU.ActiveCfg = Release|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|Any CPU.Build.0 = Release|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|x64.ActiveCfg = Release|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|x64.Build.0 = Release|x64
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|x86.ActiveCfg = Release|Win32
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1957,6 +1971,7 @@ Global
 		{64F06412-0A54-47B1-8C1B-C6A27623AEA2} = {C64C23BC-4431-40E1-8A18-610A91638B5C}
 		{D0E02523-471A-4431-A2FA-38946B6C4B07} = {07FDB157-981C-46BF-AED3-0572F8C0E6FB}
 		{CD8EF10B-F940-4806-9DAD-ABD743C38466} = {BA2F666D-FA74-4A80-B796-E87BF07529BA}
+		{A2BDDB15-00B8-4C2E-BF33-06C7CE4FADC4} = {C395EDD2-34A3-41B1-AA99-D3CBD3DD4A4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BD1BF28-3E5C-448B-8432-8C66D95301BE}

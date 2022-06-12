@@ -1,32 +1,81 @@
 #include <iostream>
 #include <queue>
 #include <malloc.h>
+#include <stack>
 using namespace std;
 
-struct node {
-	int data;
-	node* left;
-	node* right;
-};
-//https://leetcode.com/problems/binary-tree-level-order-traversal/
-//TODO: Fix it
-void levelOrder(struct node* root) {
-	if (root == NULL) return;
-	queue<node*> Q;
-	Q.push(root);
-	while (!Q.empty()) {
-		struct node* curr = Q.front();
-		cout << curr->data << " ";
-		if (curr->left != NULL) Q.push(curr->left);
-		if (curr->right != NULL) Q.push(curr->right);
-		Q.pop();
+struct TreeNode {
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+	TreeNode(int v) {
+		val = v;
 	}
-}
+};
 
-struct node* newNode(int data)
+//https://leetcode.com/problems/binary-tree-level-order-traversal/
+class Solution {
+private:
+	int getTreeHeight(TreeNode* root) {
+		if (root == nullptr)
+			return 0;
+		int left = getTreeHeight(root->left);
+		int right = getTreeHeight(root->right);
+		return max(left, right) + 1;
+	}
+
+public:
+	vector< vector<int>> levelOrder(TreeNode* root) {
+		vector<vector<int>> levels;
+		int treeLevels = getTreeHeight(root);
+
+		for (int i = 0; i < treeLevels; i++) {
+			levels.push_back({});
+		}
+
+		if (root == nullptr) {
+			return levels;
+		}
+
+		int iLevelIndex = 1;
+
+		queue<TreeNode*> q;
+		q.push(root);
+		levels[0].push_back(root->val);
+
+		while (iLevelIndex < levels.size()) {
+
+			queue<TreeNode*> nodesInlevel;
+
+			while (!q.empty()) {
+				TreeNode*  node = q.front();
+				if (node->left)
+					nodesInlevel.push(node->left);
+
+				if(node->right)
+					nodesInlevel.push(node->right);
+
+				q.pop();
+			}
+
+			while (!nodesInlevel.empty())
+			{
+				TreeNode* node = nodesInlevel.front();
+				q.push(node);
+				levels[iLevelIndex].push_back(node->val);
+				nodesInlevel.pop();
+			}
+			iLevelIndex++;
+		}
+
+		return levels;
+	}
+};
+
+struct TreeNode* newNode(int data)
 {
-	struct node* node = (struct node*)malloc(sizeof(struct node));
-	node->data = data;
+	struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+	node->val = data;
 	node->left = NULL;
 	node->right = NULL;
 	return(node);
@@ -34,14 +83,22 @@ struct node* newNode(int data)
 
 int main()
 {
-	struct node* root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
-	root->left->right = newNode(5);
-	root->right->left = newNode(6);
+	struct TreeNode* root = newNode(3);
+	root->left = newNode(9);
+	root->right = newNode(20);
+	root->right->left = newNode(15);
 	root->right->right = newNode(7);
 	printf("Level Order traversal of binary tree is \n");
-	levelOrder(root);
+	Solution s;
+	vector<vector<int>> levels = s.levelOrder(root);
+	for (auto vec : levels) {
+		for (auto elem : vec)
+		{
+			cout << elem << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
 	return 0;
 }
