@@ -28,8 +28,31 @@ public:
 };
 
 
+void traverse(ListNode* root) {
+    while (root) {
+        cout << root->val << " ";
+        root = root->next;
+    }
+    cout << endl;
+}
+
 int main()
 {
+    ListNode* n6 = new ListNode(6);
+    ListNode* n5 = new ListNode(5);
+    n5->next = n6;
+    ListNode* n4 = new ListNode(4);
+    n4->next = n5;
+    ListNode* n3 = new ListNode(3);
+    n3->next = n4;
+    ListNode* n2 = new ListNode(2);
+    n2->next = n3;
+    ListNode* n1 = new ListNode(1);
+    n1->next = n2;
 
+    Solution s;
+    traverse(n1);
+    ListNode* result=  s.reverseList(n1);
+    traverse(result);
     return 0;
 }
