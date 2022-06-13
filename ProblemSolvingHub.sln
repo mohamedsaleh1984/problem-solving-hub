@@ -327,6 +327,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Merge Sorted Array", "Merge
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Binary Tree Right Side View", "Binary Tree Right Side View\Binary Tree Right Side View.vcxproj", "{545B86CB-5047-4255-8813-0073C85CD20E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rotting Oranges", "Rotting Oranges\Rotting Oranges.vcxproj", "{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1875,6 +1877,18 @@ Global
 		{545B86CB-5047-4255-8813-0073C85CD20E}.Release|x64.Build.0 = Release|x64
 		{545B86CB-5047-4255-8813-0073C85CD20E}.Release|x86.ActiveCfg = Release|Win32
 		{545B86CB-5047-4255-8813-0073C85CD20E}.Release|x86.Build.0 = Release|Win32
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|Any CPU.Build.0 = Debug|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|x64.ActiveCfg = Debug|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|x64.Build.0 = Debug|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|x86.ActiveCfg = Debug|Win32
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Debug|x86.Build.0 = Debug|Win32
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|Any CPU.ActiveCfg = Release|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|Any CPU.Build.0 = Release|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|x64.ActiveCfg = Release|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|x64.Build.0 = Release|x64
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|x86.ActiveCfg = Release|Win32
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2018,6 +2032,7 @@ Global
 		{46F8B8B0-0873-4D10-BD43-FB6A5AD17BF6} = {D8067A99-8744-42B4-8CF4-3F3A1356AAEE}
 		{D6D9059F-8357-4BE9-BEEE-F24B071E8264} = {C64C23BC-4431-40E1-8A18-610A91638B5C}
 		{545B86CB-5047-4255-8813-0073C85CD20E} = {C395EDD2-34A3-41B1-AA99-D3CBD3DD4A4D}
+		{F701E9C2-98BC-4D84-93F4-72E3EFC7C4B4} = {17B249B1-287E-45E7-BBDF-AC9F3646EA94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BD1BF28-3E5C-448B-8432-8C66D95301BE}

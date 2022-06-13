@@ -59,18 +59,6 @@ public:
 	bool IsVisisted(vector<int> vec) {
 		return visited[vec[0]][vec[1]];
 	}
-
-	void computeIsland(int row, int col) {
- 
-		visited[row][col] = true;
-		vector<vector<int>> negb = getNeighbour(row, col);
-		vector<vector<int>>::iterator it;
-		for (it = negb.begin(); it != negb.end(); it++) {
-			vector<int> check = *it;
-			if (!IsVisisted(check))
-				computeIsland(check[0], check[1]);
-		}
-	}
 };
 
 int main()
