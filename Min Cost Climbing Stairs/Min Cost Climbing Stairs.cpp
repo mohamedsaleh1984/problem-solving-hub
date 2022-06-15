@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//https://leetcode.com/problems/min-cost-climbing-stairs/
+//TODO: Fix it
 class Solution {
 public:
     vector<int> steps;

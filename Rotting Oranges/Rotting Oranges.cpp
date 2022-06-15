@@ -60,21 +60,40 @@ public:
 			return 0;
 		}
 		
+		bool checkFreshOrange = true;
+		while (checkFreshOrange) {
 
-		while (!rottenOranges.empty()) {
+			vector<vector<int>> freshOranges;
+			while (!rottenOranges.empty()) {
+				vector<int> vertex = rottenOranges.front();
 
+				visited[vertex[0]][vertex[1]] = true;
 
+				vector<vector<int>>  negb = getNeighbours(vertex[0], vertex[1]);
+				
+				for (int i = 0; i < negb.size(); i++) {
+					freshOranges.push_back(negb[i]);
+				}
 
-			vector<int> vertex = rottenOranges.front();
-			spreadRotten(vertex[0], vertex[1]);
+				rottenOranges.pop();
+			}
+			if (freshOranges.size())
+				counter++;
 
-
-
+			for (int i = 0; i < freshOranges.size(); i++) {
+				vector<int> v = freshOranges[i];
+				this->grid[v[0]][v[1]] = 2;
+				rottenOranges.push(v);
+			}
+			if (freshOranges.size() == 0)
+				checkFreshOrange = false;
+			
 		}
 
 
 		if (anyFresh())
 			return -1;
+
 		return counter;
 	}
 
@@ -88,24 +107,6 @@ public:
 			}
 		}
 		return false;
-	}
-
-	void spreadRotten(int row, int col) {
-		visited[row][col] = true;
-		rottenOranges.pop();
-		vector<vector<int>>  negb = getNeighbours(row, col);
-
-		if (negb.size() > 0) {
-			counter++;
-		}
-
-		vector<vector<int>>::iterator it;
-		for (it = negb.begin(); it != negb.end(); it++) {
-			vector<int> check = *it;
-			rottenOranges.push(*it);
-			this->grid[check[0]][check[1]] = 2;
-
-		}
 	}
 };
 
@@ -122,7 +123,7 @@ int main()
 								{1,0,0,0,0,0,0,0,0,1},
 								{1,1,1,1,1,1,1,1,1,1} };*/
 
-	vector<vector<int>> grid = { {2, 1, 1}, { 1,1,1 }, { 0,1,2 } };
+	vector<vector<int>> grid = { {2, 1, 1}, { 0,1,1}, { 1,0,1 } };
 
 	Solution s = Solution();
 	cout << s.orangesRotting(grid) << endl;
