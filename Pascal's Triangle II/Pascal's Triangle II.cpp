@@ -5,10 +5,18 @@ using namespace std;
 class Solution {
 public:
     vector<int> getRow(int rowIndex) {
+        vector<int> result;
 
+        return result;
     }
 };
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<int> result;
+    Solution s = Solution();
+    result = s.getRow(10);
+    for (auto elem : result)
+        cout << elem << " ";
+
+    return 0;
 }
