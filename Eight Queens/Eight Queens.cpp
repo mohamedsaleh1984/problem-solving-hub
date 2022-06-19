@@ -19,7 +19,6 @@ public:
 		}
 	}
 
-
 private:
 	int numOfQueens;
 	vector<vector<int>> chessTable;
