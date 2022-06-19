@@ -9,6 +9,8 @@
 #include <map>
 using namespace std;
 
+//https://leetcode.com/problems/isomorphic-strings
+//3 ms, faster than 96.78% of C++ online submissions for Isomorphic Strings.
 bool is_isomorphic(std::string str_1, std::string str_2) {
     if (str_1.length() != str_2.length())
         return false;
