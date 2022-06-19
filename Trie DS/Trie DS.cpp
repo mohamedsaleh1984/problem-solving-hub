@@ -74,7 +74,7 @@ int main()
 	Trie* T = new Trie();
 	T->insert_word("mega");
 	T->insert_word("mody");
-	T->insert_word("magdy");
+	T->insert_word("maddy");
 
 
 	cout << T->Search("mody") << endl;

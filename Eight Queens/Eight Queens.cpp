@@ -26,14 +26,14 @@ private:
 
 	bool isPlaceValid(int rowIndex, int colIndex) {
 
-		if (checkCurrentRow(rowIndex, colIndex))
-			return true;
+		if (!checkCurrentRow(rowIndex, colIndex))
+			return false;
 
-		if (checkDiagonalsTopLeftRightBottom(rowIndex, colIndex))
-			return true;
+		if (!checkDiagonalsTopLeftRightBottom(rowIndex, colIndex))
+			return false;
 
-		if (checkDiagonalsTopRightLeftBottom(rowIndex, colIndex))
-			return true;
+		if (!checkDiagonalsTopRightLeftBottom(rowIndex, colIndex))
+			return false;
 
 		return true;
 	}
@@ -96,5 +96,7 @@ private:
 
 int main()
 {
-   
+	Queens Q = Queens(4);
+	Q.solve();
+	return 0;
 }
