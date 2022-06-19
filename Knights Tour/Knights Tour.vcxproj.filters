@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="permutations.cpp">
+    <ClCompile Include="Knights Tour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

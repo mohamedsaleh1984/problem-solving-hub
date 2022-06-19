@@ -44,9 +44,6 @@ private:
     map<char, string> mapper;
 };
 
-
-
-
 int main()
 {
     map<char, string> mapper;

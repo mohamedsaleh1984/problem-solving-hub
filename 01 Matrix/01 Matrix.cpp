@@ -7,15 +7,15 @@
 using namespace std;
 
 //https://leetcode.com/problems/01-matrix/
-//TODO: Write the algo
+//Runtime: 94 ms, faster than 73.20% of C++ online submissions for 01 Matrix.
 
 
 class Solution {
 private:
-	vector<vector<bool>> visited;
-	vector<vector<int>> mat;
 	int COLS;
 	int ROWS;
+	const int MAX_DISTANCE = 10000;
+	vector<vector<int>> mat;
 public:
 	void init(vector<vector<int>> mat)
 	{
@@ -26,34 +26,44 @@ public:
 
 	vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
 		init(mat);
-		vector<vector<int>> result = mat;
-		for (int i = 0; i < ROWS; i++)
-		{
-			for (int j = 0; j < COLS; j++) {
-				int row = i;
-				int col = j;
+		vector<vector<int>> result(mat.size());
+		for (int i = 0; i < mat.size(); i++)
+			result[i].resize(mat[i].size());
 
-				if (mat[row][col] == 1)
-				{
-					if (col + 1 < COLS && mat[row][col + 1] == 0)
-						result[row][col] = 1;
-					else if (col - 1 >= 0 && mat[row][col - 1] == 0)
-						result[row][col] = 1;
-					else if (row - 1 >= 0 && mat[row - 1][col] == 0)
-						result[row][col] = 1;
-					else if (row + 1 < ROWS && mat[row + 1][col] == 0)
-						result[row][col] = 1;
-					else if (col + 1 < COLS && mat[row][col + 1] == 1)
-						result[row][col] = result[row][col + 1] + 1;
-					else if (col - 1 >= 0 && mat[row][col - 1] == 1)
-						result[row][col] = result[row][col - 1] + 1;
-					else if (row - 1 >= 0 && mat[row - 1][col] == 1)
-						result[row][col] = result[row - 1][col] + 1;
-					else if (row + 1 < ROWS && mat[row + 1][col] == 1)
-						result[row][col] = result[row + 1][col] + 1;
+		for (int r = 0; r < mat.size(); r++)
+			for (int c = 0; c < mat[r].size(); c++)
+				result[r][c] = MAX_DISTANCE;
+
+
+		for (int r = 0; r < result.size(); r++)
+		{
+			for (int c = 0; c < result[r].size(); c++)
+			{
+				if (mat[r][c] == 0) {
+					result[r][c] = 0;
+					continue;
 				}
+				if (r > 0)
+					result[r][c] = min(result[r][c], result[r - 1][c] + 1);
+				if (c > 0)
+					result[r][c] = min(result[r][c], result[r][c - 1] + 1);
+
+			}
+
+		}
+
+		for (int r = ROWS - 1; r >= 0; r--)
+		{
+			for (int c = COLS - 1; c >= 0; c--)
+			{
+				if (r != ROWS - 1)
+					result[r][c] = min(result[r][c], result[r + 1][c] + 1);
+
+				if (c != COLS - 1)
+					result[r][c] = min(result[r][c], result[r][c + 1] + 1);
 			}
 		}
+
 		return result;
 	}
 };
@@ -73,14 +83,20 @@ void prointOut(vector<vector<int>>  vec)
 int main()
 {
 	vector<vector<int>> mat = { {0,0,0},{0,1,0},{0,0,0} };
-	prointOut(mat);
+	//prointOut(mat);
 	Solution s;
-	mat = s.updateMatrix(mat);
-	prointOut(mat);
-	vector<vector<int>> mat2 = { {0,0,0},{0,1,0},{1,1,1} };
-	prointOut(mat2);
-	mat2 = s.updateMatrix(mat2);
-	prointOut(mat2);
+//	mat = s.updateMatrix(mat);
+//	prointOut(mat);
+//	
+//	vector<vector<int>> mat2 = { {0,0,0},{0,1,0},{1,1,1} };
+//	//prointOut(mat2);
+//	mat2 = s.updateMatrix(mat2);
+////	prointOut(mat2);
+//
+//	vector<vector<int>> mat3 = { {0,1,0},{1,0,1},{1,1,1},{1,1,1} };
+//	mat3 = s.updateMatrix(mat3);
 
+	vector<vector<int>> mat4 = { {0,1,0,1,1},{1,1,0,0,1},{0,0,0,1,0},{1,0,1,1,1},{1,0,0,0,1} };
+	mat4 = s.updateMatrix(mat4);
 	return 0;
 }
