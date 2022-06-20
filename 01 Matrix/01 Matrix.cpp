@@ -34,7 +34,7 @@ public:
 			for (int c = 0; c < mat[r].size(); c++)
 				result[r][c] = MAX_DISTANCE;
 
-
+		//Top Down
 		for (int r = 0; r < result.size(); r++)
 		{
 			for (int c = 0; c < result[r].size(); c++)
@@ -51,7 +51,7 @@ public:
 			}
 
 		}
-
+		//Bottom Up 
 		for (int r = ROWS - 1; r >= 0; r--)
 		{
 			for (int c = COLS - 1; c >= 0; c--)

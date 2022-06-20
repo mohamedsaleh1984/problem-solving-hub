@@ -153,20 +153,32 @@ private:
 		return false;
 	}
 
-	bool IsValidPlacement(int rowIndx, int colIndx, char numberToTry, vector<vector<char>>& board) {
-		if (!isValidRow(rowIndx, numberToTry, board))
-			return false;
+	bool IsValidPlacement(int rowIndx, int colIndx, char numberToPlace, vector<vector<char>> board) {
+		for (int i = 0; i < BOARD_SIZE; ++i)
+		{
+			if (board[rowIndx][i] == numberToPlace)
+				return false;
+		}
+		for (int i = 0; i < BOARD_SIZE; ++i)
+		{
+			if (board[i][colIndx] == numberToPlace)
+				return false;
+		}
 
-		if (!isValidColumn(colIndx, numberToTry, board))
-			return false;
+		int boxRowOffset = (colIndx / 3) * BOX_SIZE;
+		int boxColumnOffset = (rowIndx / 3) * BOX_SIZE;
 
-		if (!isValidBox(rowIndx, colIndx, numberToTry, board))
-			return false;
+		for (int i = 0; i < BOX_SIZE; i++) {
+			for (int j = 0; j < BOX_SIZE; j++) {
+				if (numberToPlace == board[boxRowOffset + i][boxColumnOffset + j])
+					return false;
+			}
+		}
 
 		return true;
 	}
 
-	bool isValidRow(int rowIndex, char numberToPlace, vector<vector<char>>& board) {
+	bool isValidRow(int rowIndex, char numberToPlace, vector<vector<char>> board) {
 		for (int i = 0; i < BOARD_SIZE; ++i)
 		{
 			if (board[rowIndex][i] == numberToPlace)
@@ -175,7 +187,7 @@ private:
 		return true;
 	}
 
-	bool isValidColumn(int colIndex, char numberToPlace, vector<vector<char>>& board) {
+	bool isValidColumn(int colIndex, char numberToPlace, vector<vector<char>> board) {
 		for (int i = 0; i < BOARD_SIZE; ++i)
 		{
 			if (board[i][colIndex] == numberToPlace)
@@ -184,7 +196,7 @@ private:
 		return true;
 	}
 
-	bool isValidBox(int rowIdx, int colIdx, char numberToPlace, vector<vector<char>>& board) {
+	bool isValidBox(int rowIdx, int colIdx, char numberToPlace, vector<vector<char>> board) {
 		int boxRowOffset = (colIdx / 3) * BOX_SIZE;
 		int boxColumnOffset = (rowIdx / 3) * BOX_SIZE;
 
@@ -198,7 +210,13 @@ private:
 	}
 public:
 	void solveSudoku(vector<vector<char>>& board) {
-		solve(0, 0, board);
+		if (solve(0, 0, board))
+		{
+			cout << "Done";
+		}
+		else {
+			cout << "Not Done";
+		}
 	}
 };
 
@@ -208,15 +226,16 @@ public:
 
 int main()
 {
-	vector<vector<char>> board = { {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-		{ '6','.','.','1','9','5','.','.','.' },
-		{ '.','9','8','.','.','.','.','6','.' },
-		{ '8','.','.','.','6','.','.','.','3' },
-		{ '4','.','.','8','.','3','.','.','1' },
-		{ '7','.','.','.','2','.','.','.','6' },
-		{ '.','6','.','.','.','.','2','8','.' },
-		{ '.','.','.','4','1','9','.','.','5' }, 
-		{ '.','.','.','.','8','.','.','7','9' } };
+	/*vector<vector<char>> board = {
+		{'5','3','.','.','7','.','.','.','.'},
+		{'6','.','.','1','9','5','.','.','.'},
+		{'.','9','8','.','.','.','.','6','.'},
+		{'8','.','.','.','6','.','.','.','3'},
+		{'4','.','.','8','.','3','.','.','1'},
+		{'7','.','.','.','2','.','.','.','6'},
+		{'.','6','.','.','.','.','2','8','.'},
+		{'.','.','.','4','1','9','.','.','5'},
+		{'.','.','.','.','8','.','.','7','9'}};
 	Solution s;
 	s.solveSudoku(board);
 
@@ -227,7 +246,15 @@ int main()
 			cout << board[i][j] << " ";
 		}
 		cout << endl;
-	}
+	}*/
+
+
+
+	vector<vector<int>> sudokuTable = {
+				{{5,3,0,0,7,0,0,0,0},{6,0,0,1,9,5,0,0,0},{0,9,8,0,0,0,0,6,0},{8,0,0,0,6,0,0,0,3},{4,0,0,8,0,3,0,0,1},{7,0,0,0,2,0,0,0,6},{0,6,0,0,0,0,2,8,0},{0,0,0,4,1,9,0,0,5},{0,0,0,0,8,0,0,7,9}}
+	};
+	SudokuSolver ss(sudokuTable);
+	ss.solveSudoku();
 
 	return 0;
 }
