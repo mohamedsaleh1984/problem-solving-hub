@@ -369,6 +369,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jump Game II", "Jump Game I
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Backspace String Compare", "Backspace String Compare\Backspace String Compare.vcxproj", "{E79C30C0-A577-4EAC-920C-11C4B1BE5824}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math", "Math", "{B29D2B37-2ED0-4AC9-B04E-E21DD1E864FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Add Two Integers", "Add Two Integers\Add Two Integers.vcxproj", "{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2150,6 +2154,18 @@ Global
 		{E79C30C0-A577-4EAC-920C-11C4B1BE5824}.Release|x64.Build.0 = Release|x64
 		{E79C30C0-A577-4EAC-920C-11C4B1BE5824}.Release|x86.ActiveCfg = Release|Win32
 		{E79C30C0-A577-4EAC-920C-11C4B1BE5824}.Release|x86.Build.0 = Release|Win32
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|Any CPU.Build.0 = Debug|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|x64.ActiveCfg = Debug|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|x64.Build.0 = Debug|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|x86.ActiveCfg = Debug|Win32
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Debug|x86.Build.0 = Debug|Win32
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|Any CPU.ActiveCfg = Release|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|Any CPU.Build.0 = Release|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|x64.ActiveCfg = Release|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|x64.Build.0 = Release|x64
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|x86.ActiveCfg = Release|Win32
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2316,6 +2332,7 @@ Global
 		{57867DE0-5651-425E-A61D-F0DB31883D5D} = {C395EDD2-34A3-41B1-AA99-D3CBD3DD4A4D}
 		{69E812E3-4E58-4C41-99AE-22E545B79F90} = {07FDB157-981C-46BF-AED3-0572F8C0E6FB}
 		{E79C30C0-A577-4EAC-920C-11C4B1BE5824} = {C96601AB-A43E-4099-9C30-887441AF1058}
+		{E9CF27D0-9E0D-4E7B-824D-8AA568556AA5} = {B29D2B37-2ED0-4AC9-B04E-E21DD1E864FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BD1BF28-3E5C-448B-8432-8C66D95301BE}
