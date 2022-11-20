@@ -5,13 +5,15 @@
 #include <iomanip>       
 using namespace std;
 //https://leetcode.com/problems/coloring-a-border/
-//TODO: FXI
+//TODO: FIX
 class Solution {
 private:
 	vector<vector<bool>> visited;
 	vector<vector<int>> grid;
+
 	int COLS;
 	int ROWS;
+	
 	void printActions(vector<int> point, string action) {
 		cout << action << " [" << point[0] << "," << point[1] << "]\n";
 	}
@@ -28,25 +30,10 @@ public:
 		COLS = grid[0].size();
 	}
 
-	/*int maxAreaOfIsland(vector<vector<int>> grid) {
-		init(grid);
-		vector<int> islandSize = {};
-		for (int i = 0; i < grid.size(); i++) {
-			for (int j = 0; j < grid[i].size(); j++) {
-				if (grid[i][j] == 1 && visited[i][j] == false) {
-					int width = 0;
-					computeIslandWidth(i, j, width);
-					islandSize.push_back(width);
-				}
-			}
-		}
+	vector<vector<int>> colorBorder(vector<vector<int>>& grid, int row, int col, int color) {
 
-		if (islandSize.size()) {
-			sort(islandSize.begin(), islandSize.end());
-			return islandSize[islandSize.size() - 1];
-		}
-		return 0;
-	}*/
+		return grid;
+	}
 
 	vector<vector<int>> colorBorder(vector<vector<int>>& grid, int row, int col, int color) {
 		return grid;

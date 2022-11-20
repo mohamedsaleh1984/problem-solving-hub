@@ -4,40 +4,30 @@
 #include <string>
 using namespace std;
 //https://leetcode.com/problems/longest-common-prefix/
-//TODO: solve
+ 
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {
-        if (strs.size() == 0)
-            return "";
+    string longestCommonPrefix(vector<string>& s) {
+        int ans = s[0].length();
+        int n = s.size();
 
-        if (strs.size() == 1)
-            return strs[0];
-
-      /*  string pref = to_string(strs[0]);
-
-        longestCommonPrefixLookup(strs, 0, pref);*/
-
-        return "";
-    }
-
-    void longestCommonPrefixLookup(vector<string>& strs, int currentIndex, string& pref) {
-
+        for (int i = 1; i < n; i++)
+        {
+            //compare letters in each word comparing with 1+ words
+            int j = 0;
+            while (j < s[i].length() && s[i][j] == s[0][j])
+                j++;
+            ans = min(ans, j);
+        }
+        return s[0].substr(0, ans);
     }
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<string> strs = { "flower", "flow", "flight" };
+    Solution s;
+    cout << s.longestCommonPrefix(strs) << endl;
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+ 
