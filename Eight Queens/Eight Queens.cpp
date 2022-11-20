@@ -95,7 +95,7 @@ private:
 
 int main()
 {
-	Queens Q = Queens(4);
+	Queens Q = Queens(8);
 	Q.solve();
 	return 0;
 }

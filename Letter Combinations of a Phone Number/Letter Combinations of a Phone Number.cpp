@@ -18,26 +18,31 @@ public:
         mapper.insert(pair<char, string>{'9', "wxyz"});
     }
 
-    //234
-    int computeCombinations(string digits) {
-        int comp = 1;
-        for (int i = 0; i < digits.length(); i++) {
-            string codePerDigit = mapper[digits[i]];
-            comp *= codePerDigit.length();
-        }
-        return comp;
-    }
     vector<string> letterCombinations(string digits) {
-        vector<string> result;
-        string codes = mapper[digits[0]];
-        for (int i = 0; i < 3; i++)
-        {
-            string comb;
-            comb.push_back(codes[i]);
-            result.push_back(comb);
-        }
+        vector<string> resultSet;
+        string entry;
+        string keysToHit = mapper[0];
+        Solve(digits,entry,resultSet);
 
-        return result;
+        return resultSet;
+
+    }
+   
+    void Solve(string digits,string& entry, vector<string>& resultSet) {
+      
+
+        string stroks = mapper[digits[0]];
+
+        for (int i = 0; i < stroks.length(); i++) {
+            
+
+
+
+        }
+        
+        
+
+       
     }
 
 private:
@@ -66,3 +71,27 @@ int main()
 
     return 0;
 }
+
+/*
+ //234
+    int computeCombinations(string digits) {
+        int comp = 1;
+        for (int i = 0; i < digits.length(); i++) {
+            string codePerDigit = mapper[digits[i]];
+            comp *= codePerDigit.length();
+        }
+        return comp;
+    }
+    vector<string> letterCombinations(string digits) {
+        vector<string> result;
+        string codes = mapper[digits[0]];
+        for (int i = 0; i < 3; i++)
+        {
+            string comb;
+            comb.push_back(codes[i]);
+            result.push_back(comb);
+        }
+
+        return result;
+    }
+*/
