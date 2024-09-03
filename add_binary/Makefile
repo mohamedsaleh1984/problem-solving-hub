@@ -36,7 +36,7 @@ $(BINARY): $(OBJECTS)
 	@echo "Compiling...$^"
 	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
-git_message := 'modified AddBinary.cpp'
+git_message := 'modified ' $(lastword $(CURDIR))
 
 clean:
 	@echo "clean up..."
