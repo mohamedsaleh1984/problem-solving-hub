@@ -36,7 +36,6 @@ $(BINARY): $(OBJECTS)
 	@echo "Compiling...$^"
 	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
-git_message := 'modified ' $(lastword $(CURDIR))
 
 clean:
 	@echo "clean up..."
@@ -44,9 +43,9 @@ clean:
 	@git status
 
 git-commit:$(clean)
-	@echo $(git_message)
+	@echo pushing...
 	@git add .
-	@git commit -m $(git_message)
+	@git commit -m $(lastword $(CURDIR))
 	@git push
 
 run:$(all)
