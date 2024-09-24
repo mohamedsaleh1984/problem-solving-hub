@@ -36,7 +36,6 @@ $(BINARY): $(OBJECTS)
 	@echo "Compiling...$^"
 	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
-
 clean:
 	@echo "clean up..."
 	rm -rf $(OBJECTS) $(DEPFILES)
