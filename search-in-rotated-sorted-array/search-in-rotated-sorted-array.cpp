@@ -11,27 +11,39 @@ class Solution
 public:
     int search(vector<int> &nums, int target)
     {
+        //No element
         if(nums.size() == 0)
             return -1;
+
+        //Single element
         if(nums.size() == 1 && nums[0] != target)
             return -1;
             
-        
+        //Find the rotation point
         int index = findMinIndex(nums);
+
         // sorted array
         if (index == -1)
         {
             return bs(nums, 0, nums.size(), target);
         }
 
+        //search in the left side of the array
         int leftHalf = bs(nums, 0, index - 1, target);
+        
+        //search in the right side of the array
         int rightHalf = bs(nums, index, nums.size(), target);
+
+        //check if NOT found in both searches
         if (leftHalf == -1 && rightHalf == -1)
             return -1;
+
+        //return max of both res which is the right index.
         return max(leftHalf, rightHalf);
     }
 
 private:
+    //binary search
     int bs(vector<int> &nums, int l, int r, int target)
     {
         if (l > r)
@@ -51,6 +63,7 @@ private:
         return bs(nums, l, mid - 1, target);
     }
 
+    //search for mid point where rotation starts
     int findMinIndex(vector<int> &nums)
     {
         std::ios::sync_with_stdio(false);
