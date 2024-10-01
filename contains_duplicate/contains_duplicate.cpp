@@ -1,25 +1,35 @@
+#include <unordered_set>
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 
-/*
-leet
-https://leetcode.com/problems/contains-duplicate-ii/
-*/
-bool containsNearbyDuplicate(vector<int>& nums, int k) {
-    unordered_map<int, int>mp;
-    for (int i = 0; i < nums.size(); i++) {
-        if (mp.count(nums[i]) && abs(mp[nums[i]] - i) <= k) 
-            return true;
-        mp[nums[i]] = i;
-    }
-    return false;
-}
-int main()
+//https://leetcode.com/problems/contains-duplicate/
+//98ms Beats42.48%
+
+class Solution
 {
-    vector<int> nums = { 1, 2, 3, 1 };
-    int k = 3;
-    cout << containsNearbyDuplicate(nums, k) << endl;
+public:
+    bool containsDuplicate(vector<int> &nums)
+    {
+        unordered_set<int> hashset;
+        for (int key : nums)
+        {
+            if (hashset.count(key) > 0)
+                return true;
+            
+            hashset.insert(key);
+        }
+        return false;
+    }
+};
+
+
+int main(void){
+    Solution s;
+    vector<int> vec = {1,2,3,1};
+
+    cout <<  s.containsDuplicate(vec) << endl;
+
+
+    return 0;
 }
- 
