@@ -1,5 +1,5 @@
-#ifndef __common.h__
-#define __common.h__
+#ifndef __common_h__
+#define __common_h__
 #include <iostream>
 #include <list>
 #include <vector>

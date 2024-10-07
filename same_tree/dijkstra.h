@@ -1,8 +1,6 @@
-#ifndef __dijkstra.h__
-#define __dijkstra.h__
+#ifndef __dijkstra_h__
+#define __dijkstra_h__
 #include "common.h"
-
-
 
 class DGraph {
     int V;

@@ -1,8 +1,8 @@
-#ifndef __redblacktree.h__
-#define __redblacktree.h__
+#ifndef __redblacktree_h__
+#define __redblacktree_h__
 #include "common.h"
 
- 
+class RedBlackTree;
 
 class rbNode {
 public:
@@ -20,7 +20,6 @@ public:
 class RedBlackTree {
 private:
     rbNode* root;
-
 protected:
     void rotateLeft(rbNode*& root, rbNode*& pt) {
         rbNode* pt_right = pt->right;

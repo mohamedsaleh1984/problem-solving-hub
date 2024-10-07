@@ -1,5 +1,5 @@
-#ifndef __bfs.h__
-#define __bfs.h__
+#ifndef __bfs_h__
+#define __bfs_h__
 
 #include "common.h"
 

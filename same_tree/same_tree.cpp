@@ -1,4 +1,5 @@
 
+#include "common.h"
 #include "binary_tree.h"
 #include "avl_tree.h"
 #include "bfs.h"

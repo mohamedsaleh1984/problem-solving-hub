@@ -1,7 +1,9 @@
-#ifndef __binary_tree.h__
-#define __binary_tree.h__
-
+#ifndef __binary_tree_h__
+#define __binary_tree_h__
 #include "common.h"
+
+class BinaryTree;
+
 // Definition for a binary tree node
 class TreeNode {
 public:

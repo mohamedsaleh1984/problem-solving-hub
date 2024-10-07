@@ -1,8 +1,8 @@
 
 #ifndef __prime_h__
 #define __prime_h__
-
 #include "common.h"
+
 #define INF 0x3f3f3f3f
 
 

@@ -1,5 +1,5 @@
-#ifndef __dfs.h__
-#define __dfs.h__
+#ifndef __dfs_h__
+#define __dfs_h__
 
 #include "common.h"
 

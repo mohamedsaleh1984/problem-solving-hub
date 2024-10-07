@@ -1,8 +1,9 @@
 
 #ifndef __kruskal_h__
 #define __kruskal_h__
-
 #include "common.h"
+
+class krus_Graph;
 
 class krus_Edge {
 public:
