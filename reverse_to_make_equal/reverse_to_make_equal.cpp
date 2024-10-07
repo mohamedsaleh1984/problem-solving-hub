@@ -2,7 +2,7 @@
 
 /*
 meta
-
+Reverse to Make Equal
 https://www.metacareers.com/profile/coding_practice_question/?problem_id=2869293499822992&psid=275492097255885&practice_plan=0&p=GENERAL_SWE&b=0011122
  */
 
