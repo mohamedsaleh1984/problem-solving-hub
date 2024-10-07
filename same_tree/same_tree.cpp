@@ -14,7 +14,21 @@ using namespace std;
 class Solution
 {
 public:
-    bool isSameTree(TreeNode *p, TreeNode *q)
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        string pTree,qTree;
+        inOrder(p,pTree);
+        inOrder(q,qTree);
+        return pTree==qTree;
+    }
+    void inOrder(TreeNode* p,string& s){
+        if(p == nullptr)   
+            return;
+        inOrder(p->left,s);
+        s+=to_string(p->val);
+        inOrder(p->right,s);
+    }
+
+    bool isSameTreex(TreeNode *p, TreeNode *q)
     {
         if (p == nullptr && q != nullptr)
             return false;
@@ -201,8 +215,7 @@ int main()
     p.insert(p.root, 20);
     p.insert(p.root, 40);
     p.insert(p.root, 70);
-    p.insert(p.root, 60);
-    p.insert(p.root, 80);
+ 
 
     BinaryTree q;
     q.root = q.insert(q.root, 50);
