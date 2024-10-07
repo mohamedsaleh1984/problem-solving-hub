@@ -14,7 +14,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool isSameTree(TreeNode* p, TreeNode* q) {
+    bool isSameTreex(TreeNode* p, TreeNode* q) {
         string pTree,qTree;
         inOrder(p,pTree);
         inOrder(q,qTree);
@@ -28,7 +28,7 @@ public:
         inOrder(p->right,s);
     }
 
-    bool isSameTreex(TreeNode *p, TreeNode *q)
+    bool isSameTree(TreeNode *p, TreeNode *q)
     {
         if (p == nullptr && q != nullptr)
             return false;
