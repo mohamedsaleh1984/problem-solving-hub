@@ -1,23 +1,22 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//https://leetcode.com/problems/container-with-most-water
+// https://leetcode.com/problems/container-with-most-water
+// 3 ms Beats 34.97%
 int maxArea(vector<int>& height) {
-    int left = 0, right = height.size() - 1;
-    int iMax = 0;
-
-    while (left < right) {
-        int area = (right - left) * min(height[left], height[right]);
-        iMax = max(iMax, area);
-        if (height[left] < height[right])
-            left++;
-        else if (height[left] > height[right])
-            right--;
-        else
-            right--;
-    }
-
-    return iMax;
+    int left = 0, right = height.size()-1;
+        int iMax = 0;
+    
+        while(left < right){
+            int area = (right-left) * min(height[left],height[right]);
+            iMax = max(iMax,area);
+            if(height[left] < height[right])
+                left++;
+            else
+                right--;
+        }
+        
+        return iMax;
 }
 
 int main()

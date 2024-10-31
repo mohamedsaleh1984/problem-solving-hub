@@ -7,67 +7,50 @@
 using namespace std;
 
 
-std::vector<std::vector<int>> triplets_with_sum_0(std::vector<int> nums) {
-	if (nums.size() < 3)
-		return {};
-	std::vector<std::vector<int>> resultSet;
-	std::map<std::string, vector<int>> map;
-	for (int i = 0; i < nums.size() - 2; i++) {
-		for (int j = i + 1; j < nums.size() - 1; j++)
-			for (int k = j + 1; k < nums.size(); k++) {
-				if (nums[i] + nums[j] + nums[k] == 0) {
-					vector<int> result;
-					result.push_back(nums[i]);
-					result.push_back(nums[j]);
-					result.push_back(nums[k]);
-					sort(result.begin(), result.end());
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
 
-					std::string key = to_string(result[0]) + to_string(result[1]) + to_string(result[2]);
-					if (map.find(key) == map.end()) {
-						map.insert(pair< std::string, vector<int>>{key, result });
-						resultSet.push_back(result);
-					}
-				}
-			}
-	}
-	sort(resultSet.begin(), resultSet.end());
-	return resultSet;
-}
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> output;
 
-std::vector<int> triplet_with_sum_0(std::vector<int> nums) {
-	vector<int> result;
-	for (int i = 0; i < nums.size() - 2; i++) {
-		for (int j = i + 1; j < nums.size() - 1; j++)
-			for (int k = j + 1; k < nums.size(); k++) {
-				if (nums[i] + nums[j] + nums[k] == 0) {
-					result.push_back(nums[i]);
-					result.push_back(nums[j]);
-					result.push_back(nums[k]);
-					return result;
-				}
-			}
-	}
-	return result;
-}
+        for (int i = 0; i < nums.size(); i++) {
+            int left = i + 1;
+            int right = nums.size() - 1;
+
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            while (left < right) {
+                int currentSum = nums[i] + nums[left] + nums[right];
+
+                if (currentSum == 0) {
+                    output.push_back({ nums[i], nums[left], nums[right] });
+                    left++;
+                    while (left < right && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                }
+                else if (currentSum > 0) {
+                    right--;
+                    while (left < right && nums[right] == nums[right + 1]) {
+                        right--;
+                    }
+                }
+                else if (currentSum < 0) {
+                    left++;
+                }
+            }
+        }
+
+        return output;
+    }
+};
 
 
 int main()
 {
-	vector<int> vec = { -1, 0, 1, 2, -1, -4 };
-	/*cout << "First triplet with sum 0" << endl;
-	vector<int> result = triplet_with_sum_0(vec);
-	for (int x : result) {
-		cout << x << " ";
-	}*/
-	//cout << "=====================================================" << endl;
-	cout << "Find all triplets with sum 0" << endl;
-	std::vector<std::vector<int>> res = triplets_with_sum_0(vec);
-	for (vector<int> v : res) {
-		for (int x : v) {
-			cout << x << " ";
-		}
-		cout << "\n";
-	}
-	cout << "=====================================================\n" << endl;
+	Solution s;
+	vector<int> vec = {-1,0,1,2,-1,-4};
+	s.threeSum(vec);
 	return 0;
 }
