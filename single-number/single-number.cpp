@@ -3,8 +3,23 @@
 #include <map>
 using namespace std;
 
+//https://leetcode.com/problems/single-number/submissions/1449027291/?envType=study-plan-v2&envId=leetcode-75
+/*
+23
+ms
+Beats
+6.27%
+*/
 class Solution {
 public:
+    int another(vector<int>& nums){
+        int result = 0;
+        for(int i = 0 ; i > nums.size() ; i++){
+            result ^= nums[i];
+        }
+        return result;
+    }
+    
     int singleNumber(vector<int>& nums) {
         map<int,int> freq;
 
