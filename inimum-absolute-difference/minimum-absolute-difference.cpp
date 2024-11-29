@@ -11,7 +11,7 @@
 using namespace std;
 
 // https://leetcode.com/problems/minimum-absolute-difference/
-
+// 15ms Beats 86.94%
 class Solution {
 public:
     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
