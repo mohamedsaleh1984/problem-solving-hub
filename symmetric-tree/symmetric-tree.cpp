@@ -4,7 +4,8 @@
 #include <iomanip>
 using namespace std;
 
-// TODO
+// https://leetcode.com/problems/symmetric-tree/
+
 
 
 struct TreeNode
@@ -17,20 +18,28 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class Solution
-{
+class Solution {
 public:
-    bool isSymmetric(TreeNode *root)
-    {
-        if(root == nullptr)
+    bool isSymmetric(TreeNode* root) {
+       if(root == nullptr)
+           return true;
+        
+        return isSymmetricHelper(root->left, root->right);
+    }
+    
+    
+    bool isSymmetricHelper(TreeNode* left, TreeNode* right){
+        if(!left && !right)
+            return true;
+        
+        if(!left || !right) 
             return false;
-
-        if(root->left || root->right)
+        if(left->val != right->val)
             return false;
         
-        if(root->left->val == root->right->val)
-            return true;
-
+        return isSymmetricHelper(left->left, right->right) 
+                && isSymmetricHelper(left->right, right->left);
+            
     }
 };
 
