@@ -22,6 +22,8 @@ public:
         for(int i = 1; i < arr.size() ; i++)
             minDiff = min(minDiff, arr[i] - arr[i-1]);
 
+        // find all pairs have the diff we found.
+        
         vector<vector<int>> res;
         for(int i = 1 ; i < arr.size() ;i++){
             if(arr[i] - arr[i-1] == minDiff){
