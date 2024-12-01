@@ -38,5 +38,8 @@ int main()
 {
 	vector<int> denominations{ 1,2,5,10,20,50,100,500,1000 };
 	cout << Coins(121, denominations) << endl;
+
+	vector<int> denominations2{ 1,2,5};
+	cout << Coins(11, denominations2) << endl;
 	return 0;
 }
