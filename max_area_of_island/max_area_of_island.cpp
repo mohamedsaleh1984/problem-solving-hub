@@ -16,41 +16,52 @@ private:
 	void printActions(vector<int> point, string action) {
 		cout << action << " [" << point[0] << "," << point[1] << "]\n";
 	}
-
 public:
+	int numberOfIslands;
 	void init(vector<vector<int>> grid) {
 		this->grid = grid;
+		
 		for (int i = 0; i < grid.size(); i++)
 		{
 			vector<bool> row(grid[i].size());
 			visited.push_back(row);
 		}
+
 		ROWS = grid.size();
 		COLS = grid[0].size();
 	}
 
 	int maxAreaOfIsland(vector<vector<int>> grid) {
 		init(grid);
-		vector<int> islandSize = {};
+		vector<int> islands = {};
+
 		for (int i = 0; i < grid.size(); i++) {
 			for (int j = 0; j < grid[i].size(); j++) {
+				//
 				if (grid[i][j] == 1 && visited[i][j] == false) {
+					
 					int width = 0;
+					
 					computeIslandWidth(i, j, width);
-					islandSize.push_back(width);
+
+					islands.push_back(width);
 				}
 			}
 		}
 
-		if (islandSize.size()) {
-			sort(islandSize.begin(), islandSize.end());
-			return islandSize[islandSize.size() - 1];
+		if (islands.size()) {
+			numberOfIslands = islands.size();
+			sort(islands.begin(), islands.end());
+			return islands[islands.size() - 1];
 		}
+
 		return 0;
 	}
 
 	vector<vector<int>>  getNeighbour(int row, int col) {
 		vector<vector<int>> negb;
+
+		// right
 		if (col + 1 < COLS && visited[row][col + 1] == false && grid[row][col + 1] == 1) {
 			negb.push_back({ row, col + 1 });
 		}
@@ -69,6 +80,7 @@ public:
 		if (row + 1 < ROWS && visited[row + 1][col] == false && grid[row + 1][col] == 1) {
 			negb.push_back({ row + 1, col });
 		}
+		
 		return negb;
 	}
 
@@ -77,6 +89,7 @@ public:
 	}
 
 	void computeIslandWidth(int row, int col, int& width) {
+		//
 		width++;
 		visited[row][col] = true;
 		vector<vector<int>> negb = getNeighbour(row, col);
@@ -87,6 +100,9 @@ public:
 				computeIslandWidth(check[0], check[1], width);
 		}
 	}
+
+	
+
 };
 
 int main()
@@ -108,6 +124,9 @@ int main()
 								 {0,1,1,1,0},
 								 {0,1,0,1,0} };
 	Solution s;
+
 	cout << s.maxAreaOfIsland(grid) << endl;
+	cout << s.numberOfIslands << endl;
+
 	return 0;
 }
