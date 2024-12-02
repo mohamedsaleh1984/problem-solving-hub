@@ -4,8 +4,10 @@
 #include <queue>
 using namespace std;
 
-//https://leetcode.com/problems/max-area-of-island/
-	class Solution {
+// https://leetcode.com/problems/max-area-of-island/
+// 47ms Beats 5.01%
+
+class Solution {
 private:
 	vector<vector<bool>> visited;
 	vector<vector<int>> grid;
