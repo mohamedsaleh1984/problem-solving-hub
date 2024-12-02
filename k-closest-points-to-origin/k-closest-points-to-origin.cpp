@@ -6,19 +6,24 @@
 #include <string>
 #include <tuple>
 #include <utility>
+#include <unordered_map>
 using namespace std;
+
+// https://leetcode.com/problems/k-closest-points-to-origin
+// 240ms Beats 12.53%
+// 12/02/2024
 
 class Solution
 {
 public:
     vector<vector<int>> kClosest(vector<vector<int>> &points, int k)
     {
-        map<float, vector<int>> ref = calc(points);
+        multimap<float, vector<int>> ref = calc(points);
         vector<vector<int>> kPoints = getKPoints(ref, k);
         return kPoints;
     }
 
-    vector<vector<int>> getKPoints(map<float, vector<int>> data, int k)
+    vector<vector<int>> getKPoints(multimap<float, vector<int>> data, int k)
     {
         vector<vector<int>> points;
         // min
@@ -27,11 +32,16 @@ public:
 
         while (it != data.end() && count < k)
         {
+            cout << "Distance " << it->first
+                 << " (" << it->second[0] << "," << it->second[1] << ")"
+                 << endl;
+
             points.push_back(it->second);
             count++;
-       
+
             it++;
         }
+
         return points;
     }
 
@@ -41,9 +51,9 @@ public:
         return dist;
     }
 
-    map<float, vector<int>> calc(vector<vector<int>> &points)
+    multimap<float, vector<int>> calc(vector<vector<int>> &points)
     {
-        map<float, vector<int>> data;
+        multimap<float, vector<int>> data;
         vector<int> origin = {0, 0};
 
         for (int i = 0; i < points.size(); i++)
