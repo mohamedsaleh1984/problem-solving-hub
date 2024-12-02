@@ -3,6 +3,7 @@
 #include <stack>
 #include <queue>
 #include <typeinfo>
+#include <algorithm>
 using namespace std;
 //TODO: Continue Avent of Code 2020 Day 9
 bool IsThereTwoNumbersSumEqualN(vector<int> vec, int n) {
