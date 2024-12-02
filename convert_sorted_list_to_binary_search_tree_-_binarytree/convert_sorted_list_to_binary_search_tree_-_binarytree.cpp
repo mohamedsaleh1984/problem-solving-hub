@@ -21,10 +21,12 @@ using namespace std;
      TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
      
  };
+
  TreeNode* creatBST(vector<int> arr, int L, int R) {
      if (R < L) {
          return NULL;
      }
+
      int min = (L + R) / 2;
      TreeNode* root = new TreeNode(arr[min]);
      root->left = creatBST(arr, L, min - 1);
