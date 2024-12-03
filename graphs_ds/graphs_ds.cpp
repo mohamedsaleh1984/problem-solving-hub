@@ -3,191 +3,268 @@
 #include <stack>
 #include <queue>
 #include <vector>
-#include <utility> 
+#include <utility>
 #include <unordered_map>
+#include <algorithm>
 #include <map>
 using namespace std;
 
-class GraphNode {
+class GraphNode
+{
 public:
-	GraphNode(int name) {
+
+	GraphNode(size_t name)
+	{
 		this->name = name;
 		this->weight = 0;
 	}
-	GraphNode(int name, int Weight) {
+	GraphNode(size_t name, size_t Weight)
+	{
 		this->name = name;
 		this->weight = Weight;
 	}
-	int getName() {
+	size_t getName()
+	{
 		return this->name;
 	}
 
-	vector<int> getAdjacent() {
+	vector<size_t> getAdjacent()
+	{
 		return adjacentNodes;
 	}
-	
-	void addAdjacent(int newNeighbor) {
-		this->adjacentNodes.push_back(newNeighbor);
+
+	void addAdjacent(size_t newNeighbor)
+	{
+		vector<size_t>::iterator flag = find(adjacentNodes.begin(), adjacentNodes.end(), newNeighbor);
+		if (flag == adjacentNodes.end())
+		{
+			this->adjacentNodes.push_back(newNeighbor);
+		}
 	}
-	bool hasNeighbor() {
+	bool hasNeighbor()
+	{
 		return this->adjacentNodes.size() > 0;
 	}
 
 private:
-	int name;
-	int weight;
-	vector<int> adjacentNodes;
+	size_t name;
+	size_t weight;
+	vector<size_t> adjacentNodes;
 };
 
-class DirectedGraph {
+class DirectedGraph
+{
 public:
-
-	void AddNode(int nodeName) {
-		if (this->Nodes.find(nodeName) == this->Nodes.end()) {
+	void AddNode(size_t nodeName)
+	{
+		if (this->Nodes.find(nodeName) == this->Nodes.end())
+		{
 			GraphNode fn(nodeName, 0);
-			this->Nodes.insert({ nodeName, fn });
+			this->Nodes.insert({nodeName, fn});
 		}
 	}
-	//Check is there a linkn between two nodes
-	bool IsThereLink(int from, int to)
+
+	void AddNodes(vector<size_t> nodes)
 	{
-		for (size_t i = 0; i < _links.size(); i++)
+		for (size_t i = 0; i < nodes.size(); i++)
 		{
-			tuple<int, int,int> item = _links[i];
-			if ( get<0>(item) == from &&  get<1>(item)== to)
+			GraphNode fn(nodes[i], 0);
+			this->Nodes.insert({nodes[i], fn});
+		}
+	}
+	// Check is there a linkn between two nodes
+	bool IsThereLink(size_t from, size_t to)
+	{
+		for (size_t i = 0; i < _edges.size(); i++)
+		{
+			tuple<size_t, size_t, size_t> item = _edges[i];
+			if (get<0>(item) == from && get<1>(item) == to)
 				return true;
 		}
 
 		return false;
 	}
 
-	//Add Link between two nodes
-	void AddLink(int fromNode, int toNode, int weight) {
-		if (this->Nodes.find(fromNode) == this->Nodes.end() || this->Nodes.find(toNode) == this->Nodes.end()) {
+	// Add Link between two nodes
+	void addEdge(size_t fromNode, size_t toNode, size_t weight)
+	{
+		if (this->Nodes.find(fromNode) == this->Nodes.end() || this->Nodes.find(toNode) == this->Nodes.end())
+		{
 			return;
 		}
 
-		if (!IsThereLink(fromNode, toNode)) {
+		if (!IsThereLink(fromNode, toNode))
+		{
 
-			tuple<int, int,int> newLink = { fromNode,toNode,weight };
-			_links.push_back(newLink);
+			tuple<size_t, size_t, size_t> newLink = {fromNode, toNode, weight};
+			_edges.push_back(newLink);
 
 			Nodes.at(fromNode).addAdjacent(toNode);
 		}
 	}
 
-	//Show Graphs (Nodes, Links)
-	void ShowGraph() {
-		//Show Nodes...
+	// Show Graphs (Nodes, Links)
+	void ShowGraph()
+	{
+		// Show Nodes...
 		cout << "Nodes...\n";
-		for (auto it = Nodes.begin(); it != Nodes.end(); ++it) {
-			pair<int, GraphNode> n = *it;
-			cout << n.first << endl;
+		for (auto it = Nodes.begin(); it != Nodes.end(); ++it)
+		{
+			pair<size_t, GraphNode> n = *it;
+			cout << n.first << " ";
 		}
 
 		cout << "links ...\n";
-		for (size_t i = 0; i < _links.size(); i++)
+		for (size_t i = 0; i < _edges.size(); i++)
 		{
-			tuple<int, int,int> item = _links[i];
-			cout << "from " << get<0>(item) << " to " << get<1>(item) << " weight " <<get<2>(item) << endl;
+			tuple<size_t, size_t, size_t> item = _edges[i];
+			cout << "from " << get<0>(item) << " to " << get<1>(item) << " weight " << get<2>(item) << endl;
 		}
 
 		cout << "Neighbours Nodes...\n";
-		for (auto it = Nodes.begin(); it != Nodes.end(); ++it) {
-			pair<int, GraphNode> n = *it;
+		for (auto it = Nodes.begin(); it != Nodes.end(); ++it)
+		{
+			pair<size_t, GraphNode> n = *it;
 			cout << "Node Name = " << n.first << " has neighbours " << n.second.hasNeighbor() << " =>";
 			pv(getNeighboursOf(n.first));
 			cout << "\n";
 		}
 	}
 
-	void pv(vector<int> vec) {
-		for (int i = 0; i < vec.size(); i++)
+	void pv(vector<size_t> vec)
+	{
+		for (size_t i = 0; i < vec.size(); i++)
 		{
 			cout << vec[i] << " ";
 		}
 	}
 
-	vector<int> getNeighboursOf(int nodeName) {
+	vector<size_t> getNeighboursOf(size_t nodeName)
+	{
 		return Nodes.at(nodeName).getAdjacent();
 	}
 
+	size_t getNodesCount()
+	{
+		return this->Nodes.size();
+	}
+
+
+
 private:
-	std::unordered_map<int, GraphNode> Nodes;
-	std::vector<tuple<int, int,int>> _links;//edge
+	std::unordered_map<size_t, GraphNode> Nodes;
+	std::vector<tuple<size_t, size_t, size_t>> _edges; // edge
 };
 
-class DFS {
+class GraphTraverse
+{
 public:
-	DFS(DirectedGraph dg) {
+	GraphTraverse(DirectedGraph dg)
+	{
 		this->_dg = dg;
 	}
 
-	void Traverse(int StartNode) {
+	void BFSTraverse(size_t StartNode)
+	{
+		cout << "BFS Algo" << endl;
+		cout << "***********************" << endl;
+
+		queue<size_t> q;
+		vector<bool> visited(_dg.getNodesCount(), false);
+
+		// cout << "visiting node " << StartNode << endl;
 		q.push(StartNode);
+		visited[StartNode - 1] = true;
+		cout << StartNode << " ";
 
 		while (!q.empty())
 		{
-			int popedNode = q.front();;
+			size_t popedNode = q.front();
+
+			// cout << "\tremoving node " << popedNode << endl;
 			q.pop();
-			cout << ".." <<  popedNode << endl;
-			MarkNode(popedNode);
 
-			AddUnvisitedAdjacentNodes(this->_dg.getNeighboursOf(popedNode));
+			vector<size_t> neighbours = this->_dg.getNeighboursOf(popedNode);
+			for (size_t i = 0; i < neighbours.size(); i++)
+			{
 
-
+				if (!visited[neighbours[i] - 1])
+				{
+					//	cout << "\tmark node " << popedNode << " visited " << endl;
+					visited[neighbours[i] - 1] = true;
+					q.push(neighbours[i]);
+					cout << neighbours[i] << " ";
+				}
+			}
 		}
-		
+
+		cout << endl;
+		cout << "***********************" << endl;
 	}
 
-	void viewGraph() {
+	void DFSTraverse(size_t StartNode)
+	{
+		cout << "DFS Algo" << endl;
+		cout << "***********************" << endl;
+
+		vector<bool> visited(_dg.getNodesCount(), false);
+		visited[StartNode - 1] = true;
+
+		stack<size_t> s;
+		s.push(StartNode);
+		cout << StartNode << " ";
+		while (!s.empty())
+		{
+			size_t popedNode = s.top();
+			// cout << "visiting node " << popedNode << endl;
+
+			// cout << "\tremoving node " << popedNode << endl;
+			s.pop();
+
+			vector<size_t> neighbours = this->_dg.getNeighboursOf(popedNode);
+			for (size_t i = 0; i < neighbours.size(); i++)
+			{
+				if (!visited[neighbours[i] - 1])
+				{
+					// cout << "\tmark node " << popedNode << " visited " << endl;
+					visited[neighbours[i] - 1] = true;
+					s.push(neighbours[i]);
+					cout << neighbours[i] << " ";
+				}
+			}
+		}
+
+		cout << endl;
+		cout << "***********************" << endl;
+	}
+
+
+	void viewGraph()
+	{
 		this->_dg.ShowGraph();
 	}
 
-	bool IsVisited(int nodeName)
-	{
-		return find(visitedNodes.begin(), visitedNodes.end(), nodeName) != visitedNodes.end();
-	}
-	void AddUnvisitedAdjacentNodes(vector<int> adjacent)
-	{
-		for (size_t i = 0; i < adjacent.size(); i++){
-			if (IsVisited(adjacent[i])) {
-				q.push(adjacent[i]);
-			}
-		}
-	}
 private:
 	DirectedGraph _dg;
-	vector<int> visitedNodes;
-	queue<int> q;
-	void MarkNode(int nodeName) {
-		visitedNodes.push_back(nodeName);
-	}
 };
 
 int main()
 {
-	DirectedGraph  cls;
-	cls.AddNode(1);
-	cls.AddNode(2);
-	cls.AddNode(3);
-	cls.AddNode(4);
-	cls.AddNode(5);
-	
-	cls.AddLink(1, 2, 1);
-	cls.AddLink(1, 3, 10);
-	cls.AddLink(2, 3, 3);
-	cls.AddLink(3, 4, 1);
-	cls.AddLink(4, 5, 1);
-	cls.AddLink(2, 5, 1);
-	
+	std::ios_base::sync_with_stdio(false);
 
-	DFS* dfs = new DFS(cls);
-	dfs->viewGraph();
+	DirectedGraph cls;
+	vector<size_t> vec = {1, 2, 3, 4, 5};
+	cls.AddNodes(vec);
 
-	dfs->Traverse(1);
+	cls.addEdge(1, 2, 1);
+	cls.addEdge(1, 3, 10);
+	cls.addEdge(2, 3, 3);
+	cls.addEdge(3, 4, 1);
+	cls.addEdge(4, 5, 1);
+	cls.addEdge(2, 5, 1);
 
-
-
+	GraphTraverse *t = new GraphTraverse(cls);
+	t->BFSTraverse(1);
+	t->DFSTraverse(1);
 	return 0;
 }
