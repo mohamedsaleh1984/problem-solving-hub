@@ -59,3 +59,40 @@ int main(void)
     cout << s.isValidBST(root) << endl;
     return 0;
 }
+
+    bool isValidBST(TreeNode* root) {
+        if(root == nullptr )
+            return true;
+
+        if(root->left==nullptr && root->right == nullptr)
+            return true;
+
+        int rootVal = root->val;
+
+        if(root->left != nullptr &&
+            root->right  == nullptr &&
+            root->left->val < rootVal)
+        {
+            return true;
+        }
+        
+        if(root->right != nullptr &&
+            root->left == nullptr &&
+            root->right->val > rootVal)
+        {
+            return true;
+        }
+        
+        if( root->left != nullptr &&
+            root->right != nullptr && 
+            root->left->val < rootVal &&
+             root->right->val > rootVal)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+        return (isValidBST(root->left)  && isValidBST(root->right));
+    }

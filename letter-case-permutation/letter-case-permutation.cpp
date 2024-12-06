@@ -5,6 +5,9 @@
 #include <cctype>
 using namespace std;
 
+// https://leetcode.com/problems/letter-case-permutation
+// 11 ms Beats 21.37%
+
 class Solution {
 private:
     vector<string> vec;
