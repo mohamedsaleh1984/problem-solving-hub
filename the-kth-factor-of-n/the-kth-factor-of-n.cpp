@@ -9,6 +9,7 @@ using namespace std;
 // https://leetcode.com/problems/the-kth-factor-of-n
 // 0ms Beats 100.00%
 
+
 class Solution {
 public:
     int kthFactor(int n, int k) {
