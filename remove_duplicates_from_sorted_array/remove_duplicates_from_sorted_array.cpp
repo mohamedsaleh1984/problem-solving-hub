@@ -5,10 +5,33 @@
 #include <algorithm>
 using namespace std;
 
-//https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
+// 4ms Beats 11.81%
+// 12/08/2024
+
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
+	    int removeDuplicates(vector<int>& nums) {
+        int k = 1;
+        int left = 0, right = 0;
+        
+        while(right < nums.size()){
+            if(nums[left] == nums[right]){
+                right++;
+            }
+            else
+            {
+                k++;
+                left++;
+                nums[left] = nums[right];
+                right++;
+            }
+        }
+        
+        
+        return k;
+    }
+    int removeDuplicatesEx(vector<int>& nums) {
 		nums.erase(unique(nums.begin(), nums.end()), nums.end());
 		return nums.size();
     }
