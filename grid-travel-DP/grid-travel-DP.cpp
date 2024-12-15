@@ -7,7 +7,8 @@ using namespace std;
 int gridTravelUsingRec(int rows, int cols) {
 	if (rows == 1 && cols == 1) return 1;
 	if (rows == 0 || cols == 0) return 0;
-	return gridTravelUsingRec(rows, cols - 1) + gridTravelUsingRec(rows - 1, cols);
+	return gridTravelUsingRec(rows, cols - 1) +
+		   gridTravelUsingRec(rows - 1, cols);
 }
 
 int gridTravelUsingDP(	int rows,
