@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 // https://leetcode.com/problems/can-place-flowers/
 // FIX_IT
 class Solution
@@ -9,28 +6,31 @@ class Solution
 public:
     bool canPlaceFlowers(vector<int> &flowerbed, int n)
     {
-        for (size_t i = 1; i < flowerbed.size() - 1; i++)
-        {
-            size_t pre = i - 1;
-            size_t pos = i + 1;
+        // flowerbed size
+        int fbs = flowerbed.size();
 
-            if (flowerbed[i] == 0 && flowerbed[pre] == 0 && flowerbed[pos] == 0)
-            {
-                flowerbed[i] = 1;
-                n--;
-            }
-        }
         return n == 0 ? true : false;
     }
 };
 
 int main()
 {
-    vector<int> vec = {1, 0, 0, 0, 1};
+    vector<int> vec = {1, 0, 0, 0, 1, 0, 0};
     vector<int> vec1 = {1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0};
+    vector<vector<int>> TestCases = {
+        {0, 0, 1, 0, 1},
+    };
+    vector<int> TestCaseOutput = {1};
+
     int n = 1;
+
+    vector<int> vec2 = {0, 1, 0};
     Solution s;
-    cout << (s.canPlaceFlowers(vec, n) ? "Yes" : "No") << endl;
+    cout << (s.canPlaceFlowers(vec2, n) ? "Yes" : "No") << endl;
+    cout << endl;
+    printvector(vec);
 
     return 0;
+
+    //eros manos
 }
