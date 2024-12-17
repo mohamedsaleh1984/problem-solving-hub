@@ -2,10 +2,7 @@
 /*
 Given an array of integers sorted in increasing order and a target, find the index of the first element in the array that is larger than or equal to the target. Assume that it is guaranteed to find a satisfying number.
 */
-#include <iostream>
-#include <vector> 
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 int first_not_smaller(std::vector<int> arr, int target) {
     int result = -1;
