@@ -1,4 +1,6 @@
-
+#include <iostream>
+#include <vector>
+using namespace std;
 // https://leetcode.com/problems/leaf-similar-trees/submissions/1473328293/?envType=study-plan-v2&envId=leetcode-75
 // 0ms Beats 100.00%
 // 08/12/2024
@@ -22,9 +24,10 @@ public:
             return;
         
         leafs(root->left,ns);
-        if(root->left == nullptr && root->right == nullptr){
+        
+        if(root->left == nullptr && root->right == nullptr)
             ns.push_back(root->val);
-        }
+        
         leafs(root->right,ns);
     }
 
@@ -36,3 +39,12 @@ public:
         return vec1 == vec2;
     }
 };
+
+
+
+int main(int argc, char** argv)
+{
+	
+
+	return 0;
+}

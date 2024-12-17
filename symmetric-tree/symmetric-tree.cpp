@@ -23,7 +23,6 @@ public:
     bool isSymmetric(TreeNode* root) {
        if(root == nullptr)
            return true;
-        
         return isSymmetricHelper(root->left, root->right);
     }
     
@@ -34,6 +33,7 @@ public:
         
         if(!left || !right) 
             return false;
+            
         if(left->val != right->val)
             return false;
         
