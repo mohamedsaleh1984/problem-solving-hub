@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/moe/Dev/_C/problem-solving-hub/merge-k-sorted-lists",
-      "program": "/home/moe/Dev/_C/problem-solving-hub/merge-k-sorted-lists/build/Debug/outDebug",
+      "cwd": "/home/moe/Dev/_C/problem-solving-hub/combination",
+      "program": "/home/moe/Dev/_C/problem-solving-hub/combination/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

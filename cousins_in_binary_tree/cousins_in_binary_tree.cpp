@@ -1,12 +1,8 @@
-#include <iostream>
-#include <queue>
-using namespace std;
-
-struct TreeNode;
-struct TreeNode* newNode(int data);
+#include "../common.h"
 
 //https://leetcode.com/problems/cousins-in-binary-tree/
-// 
+// 0ms Beats 100.00%
+// 12/16/2024
 class Solution {
 private: 
 public:
@@ -66,10 +62,10 @@ public:
 
 int main()
 {
-	struct TreeNode* root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
+	TreeNode* root = new TreeNode(1);
+	root->left = new TreeNode(2);
+	root->right = new TreeNode(3);
+	root->left->left = new TreeNode(4);
 	
 	Solution s;
 
@@ -78,18 +74,4 @@ int main()
 	return 0;
 }
 
-
-struct TreeNode {
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-};
-
-struct TreeNode* newNode(int data)
-{
-	struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
-	node->val = data;
-	node->left = NULL;
-	node->right = NULL;
-	return(node);
-}
+ 
