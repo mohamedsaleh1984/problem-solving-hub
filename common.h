@@ -12,6 +12,13 @@
 #include <unordered_set>
 #include <stack>
 #include <set>
+#include <chrono>
+#include <thread>
+#include <string>
+#include  <bits/stdc++.h>
+
+
+
 using namespace std;
 typedef pair<int, int> iPair;
 
@@ -66,6 +73,30 @@ void printvector(vector<vector<S>> vecx)
     }
 
     cout << "]\n";
+}
+
+void inorder(TreeNode* root){
+    if(root == NULL)
+        return;
+    inorder(root->left);
+    cout << root->val << " ";
+    inorder(root->right);
+}
+
+void preorder(TreeNode* root){
+    if(root == NULL)
+        return;
+    cout << root->val << " ";
+    inorder(root->left);
+    inorder(root->right);
+}
+
+void postorder(TreeNode* root){
+if(root == NULL)
+        return;
+    inorder(root->left);
+    inorder(root->right);
+    cout << root->val << " ";
 }
 
 #endif

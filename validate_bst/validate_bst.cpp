@@ -1,8 +1,4 @@
-
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 
 //https://leetcode.com/problems/validate-binary-search-tree
 //

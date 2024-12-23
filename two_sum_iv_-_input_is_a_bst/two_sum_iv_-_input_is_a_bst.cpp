@@ -1,8 +1,4 @@
-#include <iostream>
-#include <queue>
-#include <map>
-#include <malloc.h>
-using namespace std;
+#include "../common.h"
 /*
 https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 */

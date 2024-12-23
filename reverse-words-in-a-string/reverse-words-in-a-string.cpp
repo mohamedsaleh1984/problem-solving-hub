@@ -1,10 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include  <bits/stdc++.h>
-using namespace std;
 
+
+#include "../common.h"
 //https://leetcode.com/problems/reverse-words-in-a-string/?envType=study-plan-v2&envId=leetcode-75
 
 class Solution {
