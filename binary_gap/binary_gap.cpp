@@ -1,9 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-//https://leetcode.com/problems/binary-gap/submissions/
-//ToDo:fix
+#include "../common.h"
+//https://leetcode.com/problems/binary-gap
+//FIX_IT
 std::string toBinary(unsigned long long number) {
 	string result = "";
 

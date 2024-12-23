@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-//https://leetcode.com/problems/backspace-string-compare/submissions/
+//https://leetcode.com/problems/backspace-string-compare
 /*
 Runtime: 0 ms, faster than 100.00% of C++ online submissions for Backspace String Compare.
 */

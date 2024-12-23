@@ -1,18 +1,4 @@
-#include <iostream>
-#include <queue>
-#include <malloc.h>
-#include <stack>
-using namespace std;
-
-struct TreeNode {
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-	TreeNode(int v) {
-		val = v;
-	}
-};
-
+#include "../common.h"
 //https://leetcode.com/problems/binary-tree-level-order-traversal/
 class Solution {
 private:
