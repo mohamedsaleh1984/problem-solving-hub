@@ -1,42 +1,28 @@
 #include "../common.h"
 
 // https://leetcode.com/problems/can-place-flowers/
-// FIX_IT
+// 12/24/2024
 class Solution
 {
 public:
-    bool canPlaceFlowers(vector<int> flowerbed, int n)
-    {
-        if (flowerbed.size() == 0)
-            return false;
-
-        if (flowerbed.size() == 1 && n == 1 && flowerbed[0] == 0)
-            return true;
-
-        if (flowerbed.size() == 1 && n == 1 && flowerbed[0] == 1)
-            return false;
-
-        int plantted = 0;
-
-        for (int i = 1; i < flowerbed.size(); i++)
-        {
-            if (i > 0)
-            {
-                if (flowerbed[i - 1] == 0 && flowerbed[i] == 0)
-                {
-                    plantted++;
-                }
-            }
-            if (i + 1 == flowerbed.size())
-            {
-                if (flowerbed[i - 1] == 0 && flowerbed[i] == 0)
-                {
-                    plantted++;
+    bool canPlaceFlowers(vector<int>& fb, int n) {
+        int size = fb.size();
+        for (int i = 0; i < size ; i++) {
+            // Check if the current plot is empty.
+            if (fb[i] == 0) {
+                // Check if the left and right plots are empty.
+                bool l = (i == 0) || (fb[i - 1] == 0);
+                bool r = (i == size - 1) || (fb[i + 1] == 0);
+                
+             
+                if (l && r) {
+                    fb[i] = 1;
+                    n--;
                 }
             }
         }
 
-        return n == plantted;
+        return n <= 0;
     }
 };
 
@@ -49,10 +35,12 @@ private:
 
 public:
     TestCase(vector<int> ivec, int in, bool output) : _vec(ivec), _n(in), _output(output) {}
-    vector<int> getV()
+
+    vector<int>& getV()
     {
         return _vec;
     }
+
     int getN()
     {
         return _n;
@@ -80,24 +68,25 @@ void RunTestCase(vector<TestCase> in)
 
     for (size_t i = 0; i < in.size(); i++)
     {
-        TestCase ref = in[i];
-        bResult = s.canPlaceFlowers(ref.getV(), ref.getN());
+        TestCase testcase = in[i];
+    
+        bResult = s.canPlaceFlowers(testcase.getV(), testcase.getN());
 
         sleep_for(nanoseconds(10));
         sleep_until(system_clock::now() + seconds(1));
 
-        if (bResult == ref.getOutput())
+        if (bResult == testcase.getOutput())
         {
             // green
             std::cout << "\033[32m";
-            cout << "Success expected " << ref.getOutput() << " actual " << bResult << endl;
+            cout << "Success expected " << testcase.getOutput() << " actual " << bResult << endl;
             passed++;
         }
         else
         {
             // red
             std::cout << "\033[31m";
-            cout << "Failed expected " << ref.getOutput() << " actual " << bResult << endl;
+            cout << "Failed expected " << testcase.getOutput() << " actual " << bResult << endl;
         }
         // default
         std::cout << "\033[0m";
