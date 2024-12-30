@@ -16,7 +16,8 @@
 #include <thread>
 #include <string>
 #include  <bits/stdc++.h>
-
+#include <chrono>
+#include <functional>
 
 
 using namespace std;
@@ -99,4 +100,24 @@ if(root == NULL)
     cout << root->val << " ";
 }
 
+
+template <typename Func, typename... Args>
+auto measureExecutionTime(Func&& func, Args&&... args) {
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // void function
+    if constexpr (std::is_void_v<std::invoke_result_t<Func, Args...>>) {
+        // Handle void return type
+        std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration = end - start;
+        return duration.count(); // Only return the duration for void functions
+    } else {
+        // Handle non-void return type
+        auto result = std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration = end - start;
+        return std::make_pair(result, duration.count()); // Return result and duration
+    }
+}
 #endif
