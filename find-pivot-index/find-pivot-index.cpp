@@ -1,6 +1,4 @@
-#include <vector>
-#include <iostream>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/find-pivot-index/submissions/1473787720/?envType=study-plan-v2&envId=leetcode-75
 //0 msBeats 100.00%
