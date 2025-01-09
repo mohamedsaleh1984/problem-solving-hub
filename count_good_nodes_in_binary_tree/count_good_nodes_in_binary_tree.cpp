@@ -1,20 +1,9 @@
-#include <iostream>
-#include <string>
-#include <queue>
-#include <stack>
-#include <set>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 /*
 Runtime: 161 ms, faster than 65.61% of C++ online submissions for Count Good Nodes in Binary Tree.
 */
-
-struct TreeNode {
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-};
 
 class Solution {
 public:
