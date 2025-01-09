@@ -1,8 +1,5 @@
-#include <iostream>
-#include <string>
-#include <stack>
-#include <vector>
-using namespace std;
+#include "../common.h"
+
 #define SIZE 26
 
 
