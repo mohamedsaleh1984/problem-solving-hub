@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 int KnapsackAux(vector<int> profits, vector<int> weights, int capacity, int currIndex);
 
