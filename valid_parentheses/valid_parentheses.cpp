@@ -1,6 +1,4 @@
-#include <iostream>
-#include <stack>
-using namespace std;
+#include "../common.h"
 
 
 
