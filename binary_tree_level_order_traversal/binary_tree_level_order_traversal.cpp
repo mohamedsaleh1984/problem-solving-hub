@@ -1,14 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <stack>
-using namespace std;
+#include "../common.h"
 
-struct TreeNode {
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-};
 struct TreeNode* newNode(int data);
 
 
