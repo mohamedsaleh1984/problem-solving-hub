@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/check-if-n-and-its-double-exist/?envType=daily-question&envId=2024-12-01
 //
