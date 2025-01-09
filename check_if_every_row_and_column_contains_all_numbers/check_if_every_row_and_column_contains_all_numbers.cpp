@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
-using namespace std;
+#include "../common.h"
 
 void print_out(set<int> ss) {
 	vector<int> yy(ss.begin(), ss.end());
