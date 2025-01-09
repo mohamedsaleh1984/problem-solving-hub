@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <hashtable.h>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 // 3ms Beats 56.77%
