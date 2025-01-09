@@ -1,13 +1,4 @@
-// Two Sum Sorted.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-#include <algorithm> // copy
-#include <iostream> // cin, cout, streamsize
-#include <iterator> // back_inserter, istream_iterator, ostream_iterator, prev
-#include <limits> // numeric_limits
-#include <sstream> // istringstream
-#include <string> // getline, string
-#include <vector> // vector
-using namespace std;
+#include "../common.h"
 
 std::vector<int> two_sum_sorted(std::vector<int> arr, int target) {
     vector<int> res;
