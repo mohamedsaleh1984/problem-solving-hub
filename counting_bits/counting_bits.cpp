@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <bitset>
-#include <climits>
-#include <cstdint>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/counting-bits/
 // 3ms Beats 24.68%
