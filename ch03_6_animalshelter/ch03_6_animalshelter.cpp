@@ -1,11 +1,4 @@
-// Ch03_6_AnimalShelter.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-#include <stack>
-#include <queue>
-#include <typeinfo>
-using namespace std;
+#include "../common.h"
 
 class Animal {
 public:
