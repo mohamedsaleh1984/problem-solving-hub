@@ -1,9 +1,4 @@
-#include <iostream>
-#include <map>
-#include <queue>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 /*
 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 */
