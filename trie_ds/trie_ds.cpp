@@ -1,6 +1,5 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "../common.h"
+
 #define SIZE 26
 
 
