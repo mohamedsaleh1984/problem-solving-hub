@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 // 2ms Beats 13.01%
