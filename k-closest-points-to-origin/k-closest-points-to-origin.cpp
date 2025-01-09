@@ -1,13 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <math.h>
-#include <complex>
-#include <string>
-#include <tuple>
-#include <utility>
-#include <unordered_map>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/k-closest-points-to-origin
 // 240ms Beats 12.53%
