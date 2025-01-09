@@ -1,6 +1,4 @@
-#include <iostream>
-#include <list>
-using namespace std;
+#include "../common.h"
 
 class Graph {
     int numVertices;
