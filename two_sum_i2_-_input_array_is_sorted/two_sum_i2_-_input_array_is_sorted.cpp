@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 vector<int> twoSum(vector<int>& numbers, int target) {
     vector<int> result(2);
