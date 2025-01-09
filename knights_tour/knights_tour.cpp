@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
+#include "../common.h"
 
 //horse in Chess
 class KnightsTour {
