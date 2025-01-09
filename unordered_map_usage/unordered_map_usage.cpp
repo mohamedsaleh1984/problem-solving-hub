@@ -1,6 +1,5 @@
-#include <iostream>
-#include <unordered_map>
-using namespace std;
+#include "../common.h"
+
 typedef unordered_map<int, string>::iterator uomIter;
 typedef unordered_map<int, string> isunom;
 
