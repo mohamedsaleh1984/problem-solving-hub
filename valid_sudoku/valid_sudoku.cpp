@@ -1,8 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
-using namespace std;
+#include "../common.h"
+
 /*
 https://leetcode.com/problems/valid-sudoku/
 Runtime: 28 ms, faster than 64.82% of C++ online submissions for Valid Sudoku.
