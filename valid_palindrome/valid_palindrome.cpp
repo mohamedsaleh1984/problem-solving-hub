@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 //https://leetcode.com/problems/valid-palindrome/
 /*
 Runtime: 8 ms, faster than 55.37% of C++ online submissions for Valid Palindrome.
