@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <tuple>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 /*
 	Problem Statememt: Find minimum number of coins to represent a value.
 */
