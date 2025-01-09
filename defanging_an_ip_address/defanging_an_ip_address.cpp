@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "../common.h"
 //https://leetcode.com/problems/defanging-an-ip-address
 class Solution {
 public:
