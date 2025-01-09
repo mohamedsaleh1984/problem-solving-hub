@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 void dfs(int node, vector<vector<int>>* graph, vector<bool>* visited) {
     // check whether node has been visited before
