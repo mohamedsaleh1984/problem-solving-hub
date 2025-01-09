@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <bitset>
-using namespace std;
+#include "../common.h"
  
 //https://leetcode.com/problems/house-robber/
 class Solution {

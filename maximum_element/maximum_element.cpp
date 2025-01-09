@@ -1,30 +1,27 @@
-// Maximum Element.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "../common.h"
 
-#include <iostream>
-#include <vector>
-#include <stack>
-#include <string>
-using namespace std;
-
-
-class MaxStack {
+class MaxStack
+{
 public:
-    int pop() {
+    int pop()
+    {
         int elem = S.top();
         S.pop();
         return elem;
     }
 
-    void push(int elem) {
+    void push(int elem)
+    {
         if (S.empty())
             S.push(elem);
         else
         {
             int top = S.top();
-            if (elem < top) {
+            if (elem < top)
+            {
                 stack<int> s2;
-                while (elem < S.top()) {
+                while (elem < S.top())
+                {
                     int c = S.top();
                     S.pop();
                     s2.push(c);
@@ -43,10 +40,10 @@ public:
                 S.push(elem);
             }
         }
-
     }
 
-    int top() {
+    int top()
+    {
         return S.top();
     }
 
@@ -54,14 +51,17 @@ private:
     stack<int> S;
 };
 
-vector<int> getMax(vector<string> operations) {
+vector<int> getMax(vector<string> operations)
+{
     vector<int> vec;
-    MaxStack* cls = new MaxStack();
-   
-    for (int i = 0; i < operations.size(); ++i) {
+    MaxStack *cls = new MaxStack();
+
+    for (int i = 0; i < operations.size(); ++i)
+    {
 
         char op = operations[i][0];
-        if (op == '1') {
+        if (op == '1')
+        {
             cout << operations[i] << endl;
 
             string val = operations[i].substr(2, operations[i].length() - 1);
@@ -69,28 +69,26 @@ vector<int> getMax(vector<string> operations) {
 
             cls->push(elem);
         }
-        else if (op == '2') {
+        else if (op == '2')
+        {
             cls->pop();
         }
-        else if (op == '3') {
+        else if (op == '3')
+        {
             cout << cls->top() << endl;
             vec.push_back((cls->top()));
         }
-
     }
 
-
     return vec;
-
 }
-
 
 int main()
 {
-    //MaxStack* cls = new MaxStack();
-    //int input = -1;
-    //for (int i = 0; i < 10; i++) {
-    //    cin >> input;
+    // MaxStack* cls = new MaxStack();
+    // int input = -1;
+    // for (int i = 0; i < 10; i++) {
+    //     cin >> input;
 
     //    if (input == 0)
     //    {
@@ -107,7 +105,6 @@ int main()
     //    }
     //}
 
-
     vector<string> ops(10);
     ops[0] = "1 97";
     ops[1] = "2";
@@ -119,12 +116,14 @@ int main()
     ops[7] = "3";
     ops[8] = "1 91";
     ops[9] = "3";
-        
+
     vector<int> res = getMax(ops);
-    for (size_t i = 0; i < res.size(); i++) {
+    for (size_t i = 0; i < res.size(); i++)
+    {
         cout << res[i];
 
-        if (i != res.size() - 1) {
+        if (i != res.size() - 1)
+        {
             cout << "\n";
         }
     }
@@ -133,7 +132,7 @@ int main()
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
+// Tips for Getting Started:
 //   1. Use the Solution Explorer window to add/manage files
 //   2. Use the Team Explorer window to connect to source control
 //   3. Use the Output window to see build output and other messages

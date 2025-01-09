@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array
 // 4ms Beats 11.81%
 // 12/08/2024
 

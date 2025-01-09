@@ -1,0 +1,8 @@
+graph {
+	Max -- Moe;
+	Moe -- Tolu;
+	Tolu -- Max;
+	Max -- Dina;
+	Dina -- Moe;
+	Moe -- Alfred;
+}

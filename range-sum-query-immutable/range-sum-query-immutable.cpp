@@ -1,7 +1,8 @@
-#include <vector>
-#include <iostream>
-using namespace std;
+#include "../common.h"
 
+// https://leetcode.com/problems/range-sum-query-immutable/
+// 3ms Beats 50.48%
+// 12/04/2024
 class NumArray
 {
 public:
@@ -26,20 +27,7 @@ public:
     }
 
 };
-
-template <class T>
-void viewVector(vector<T> &vec)
-{
-    for (auto x : vec)
-        cout << x << " ";
-    cout << endl;
-}
-/*
-["NumArray", "sumRange", "sumRange", "sumRange"]
-[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
-Output
-[null, 1, -1, -3]
- */
+ 
 
 int main(int argc, char **argv)
 {

@@ -1,21 +1,26 @@
 #include "../common.h"
 
-class Solution {
-    queue<TreeNode*> Q;
+class Solution
+{
+    queue<TreeNode *> Q;
 
 public:
-    void flatten(TreeNode* root) {
+    void flatten(TreeNode *root)
+    {
         /*
             1. Find the right most node on the left subtree
             2. place the right subtree on the side
             3. repeate
         */
-        TreeNode* current = root;
+        TreeNode *current = root;
 
-        while(current != nullptr){
-            if(current->left != nullptr){
-                TreeNode* temp = current->left;
-                while(temp->right != nullptr) {
+        while (current != nullptr)
+        {
+            if (current->left != nullptr)
+            {
+                TreeNode *temp = current->left;
+                while (temp->right != nullptr)
+                {
                     temp = temp->right;
                 }
 
@@ -26,16 +31,18 @@ public:
             current = current->right;
         }
     }
-    void flatten2(TreeNode* root) {
+    void flatten2(TreeNode *root)
+    {
         storeNodes(root);
 
-        TreeNode* newRoot = new TreeNode(0);
+        TreeNode *newRoot = new TreeNode(0);
         newRoot->left = nullptr;
         newRoot->right = nullptr;
-        TreeNode* tmp = newRoot;
-        while (!Q.empty()) {
+        TreeNode *tmp = newRoot;
+        while (!Q.empty())
+        {
 
-            TreeNode* sNode = Q.front();
+            TreeNode *sNode = Q.front();
             cout << "sss " << sNode->val << endl;
 
             tmp->right = new TreeNode(sNode->val);
@@ -47,7 +54,8 @@ public:
         root = newRoot->right;
         // return newRoot->right;
     }
-    void storeNodes(TreeNode* root) {
+    void storeNodes(TreeNode *root)
+    {
         if (root == nullptr)
             return;
         Q.push(root);
@@ -58,6 +66,6 @@ public:
 
 int main()
 {
- 
+
     return 0;
 }

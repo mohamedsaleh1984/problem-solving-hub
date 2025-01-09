@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
-
+#include "../common.h"
 //https://leetcode.com/problems/min-cost-climbing-stairs/
 class Solution {
 public:

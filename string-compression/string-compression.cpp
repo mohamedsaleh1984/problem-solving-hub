@@ -1,7 +1,4 @@
-#include <vector>
-#include <string>
-#include <iostream>
-using namespace std;
+#include "../common.h"
 
 template <class T>
 void view(vector<T> vec){

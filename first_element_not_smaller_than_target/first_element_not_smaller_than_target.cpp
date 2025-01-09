@@ -1,23 +1,23 @@
-//TODO: Fix
-/*
-Given an array of integers sorted in increasing order and a target, find the index of the first element in the array that is larger than or equal to the target. Assume that it is guaranteed to find a satisfying number.
-*/
 #include "../common.h"
 
-int first_not_smaller(std::vector<int> arr, int target) {
+int first_not_smaller(std::vector<int> arr, int target)
+{
     int result = -1;
     int left = 0, right = arr.size() - 1;
     int boundaryIndex = -1;
     vector<int> res = {};
 
-    while (left <= right) {
+    while (left <= right)
+    {
         int mid = left + (right - left) / 2;
         int elem = arr[mid];
-        if (elem) {
+        if (elem)
+        {
             boundaryIndex = mid;
             right = mid - 1;
         }
-        else {
+        else
+        {
             left = mid + 1;
         }
     }
@@ -26,7 +26,7 @@ int first_not_smaller(std::vector<int> arr, int target) {
 }
 int main()
 {
-    vector<int> v = { 1, 3, 3, 5, 8, 8, 10 };
+    vector<int> v = {1, 3, 3, 5, 8, 8, 10};
     cout << first_not_smaller(v, 2) << endl;
     return 0;
 }

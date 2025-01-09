@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
-#include <unordered_map>
-#include <queue>
-using namespace std;
+#include "../common.h"
 
 /*
 https://leetcode.com/problems/sort-characters-by-frequency/

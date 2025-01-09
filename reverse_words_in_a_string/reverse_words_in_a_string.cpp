@@ -1,11 +1,7 @@
-// Reverse Words in a String.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "../common.h"
 
-#include <iostream>
-#include <string>
-using namespace std;
-
-string reverseWords(string s) {
+string reverseWords(string s)
+{
     if (s.length() == 1)
         return s;
 
@@ -13,11 +9,13 @@ string reverseWords(string s) {
     int rightPtr = 0;
     int size = s.length();
 
-    while (rightPtr < size) {
+    while (rightPtr < size)
+    {
 
         char rightChar = s[rightPtr];
-        //find next space
-        while (rightChar != ' ' && rightPtr < size) {
+        // find next space
+        while (rightChar != ' ' && rightPtr < size)
+        {
             rightPtr++;
             rightChar = s[rightPtr];
         }
@@ -25,8 +23,9 @@ string reverseWords(string s) {
         rightPtr--;
         int tempLeft = leftPtr;
         int tempRight = rightPtr;
-        //Swapping 
-        while (tempLeft < tempRight) {
+        // Swapping
+        while (tempLeft < tempRight)
+        {
             char tempChar = s[tempLeft];
             s[tempLeft] = s[tempRight];
             s[tempRight] = tempChar;
@@ -40,10 +39,8 @@ string reverseWords(string s) {
 }
 int main()
 {
- 
+
     cout << reverseWords("Let's take LeetCode contest") << endl;
     cout << reverseWords("God Ding") << endl;
     return 0;
 }
-
- 

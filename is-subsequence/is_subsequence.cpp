@@ -1,10 +1,7 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/is-subsequence/
 // 0ms 100.00%
-
 
 class Solution
 {

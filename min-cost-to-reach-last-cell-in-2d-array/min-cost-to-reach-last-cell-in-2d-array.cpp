@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <climits>
-using namespace std;
+#include "../common.h"
 
 int MinCostAux(vector<vector<int>> matrix, int row, int col );
 

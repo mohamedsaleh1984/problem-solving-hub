@@ -1,6 +1,5 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
+
 /*
 https://leetcode.com/problems/search-a-2d-matrix/submissions/
 Runtime: 10 ms, faster than 18.63% of C++ online submissions for Search a 2D Matrix.

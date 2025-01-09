@@ -1,7 +1,7 @@
+#include "../common.h"
+
 // C++ program to demonstrate Adjacency Matrix
 // representation of undirected and unweighted graph
-#include <bits/stdc++.h>
-using namespace std;
 
 class T
 {
@@ -115,14 +115,9 @@ vector<int> TopSort(int v, vector<vector<int>> edges)
 
     vector<bool> visited(v);
 
-    for(int i = 0 ; i < v ; i++){
-
-
-
-
+    for (int i = 0; i < v; i++)
+    {
     }
-
-
 
     return path;
 }

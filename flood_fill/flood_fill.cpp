@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <tuple>
-#include <string>
-#include <stdexcept>
-#include <queue>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/flood-fill/  
 class Solution {

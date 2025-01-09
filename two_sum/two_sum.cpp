@@ -1,13 +1,15 @@
 #include "../common.h"
 
-//https://leetcode.com/problems/two-sum/
-//6ms Beats 88.40%
+// https://leetcode.com/problems/two-sum/
+// 6ms Beats 88.40%
 
-vector<int> twoSumUsingHashMap(vector<int>& nums, int target) {
+vector<int> twoSumUsingHashMap(vector<int> &nums, int target)
+{
 	vector<int> vec;
 	map<int, int> mp;
 
-	for (int i = 0; i < nums.size(); i++) {
+	for (int i = 0; i < nums.size(); i++)
+	{
 
 		int rem = target - nums[i];
 
@@ -25,7 +27,8 @@ vector<int> twoSumUsingHashMap(vector<int>& nums, int target) {
 	return vec;
 }
 
-vector<int> twoSumUsingLoops(vector<int>& nums, int target) {
+vector<int> twoSumUsingLoops(vector<int> &nums, int target)
+{
 	vector<int> vec;
 	for (int i = 0; i < nums.size(); i++)
 	{
@@ -42,10 +45,9 @@ vector<int> twoSumUsingLoops(vector<int>& nums, int target) {
 	return vec;
 }
 
-
 int main()
 {
-	vector<int> nums = { -3,4,3,90 };
+	vector<int> nums = {-3, 4, 3, 90};
 	int target = 0;
 	vector<int> result = twoSumUsingHashMap(nums, target);
 	for (auto a : result)

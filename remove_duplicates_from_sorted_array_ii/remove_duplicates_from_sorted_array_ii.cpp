@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <set>
-#include <unordered_set>
-#include <algorithm>
-#include <unordered_map>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
 class Solution {

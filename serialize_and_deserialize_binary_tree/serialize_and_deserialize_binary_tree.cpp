@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <string>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 //TODO: Write the algo

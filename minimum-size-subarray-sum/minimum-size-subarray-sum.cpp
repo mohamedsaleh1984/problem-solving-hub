@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <climits>
-#include <cstdlib>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/minimum-size-subarray-sum/
 // 0ms Beats 100.00%
@@ -32,7 +27,6 @@ public:
         }
         return res == INT_MAX ? 0 : res;
     }
- 
 };
 
 int main(int argc, char **argv)

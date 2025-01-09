@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <hashtable.h>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/search-in-rotated-sorted-array
 // 0ms Beats100.00%

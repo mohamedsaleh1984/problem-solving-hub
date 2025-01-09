@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/generate-parentheses/submissions/1473678107/
 // 2ms Beats 82.77%

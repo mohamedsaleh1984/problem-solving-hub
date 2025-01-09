@@ -1,12 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
-#include <stack>
-#include <unordered_map>
-#include <queue>
-#include <set>
-using namespace std;
+#include "../common.h"
+
 /*
 https://leetcode.com/problems/sort-array-by-increasing-frequency/
 */

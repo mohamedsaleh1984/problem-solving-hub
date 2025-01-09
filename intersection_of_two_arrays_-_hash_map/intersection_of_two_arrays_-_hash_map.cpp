@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <unordered_set>
-using namespace std;
+#include "../common.h"
 
 vector<int> distinct(vector<int> vec) {
 	unordered_set<int> set;
@@ -28,9 +24,6 @@ vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
 	}
 	return res;
 }
-
-
-
 
 int main()
 {

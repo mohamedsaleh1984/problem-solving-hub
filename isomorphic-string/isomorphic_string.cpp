@@ -1,13 +1,4 @@
-
-#include <algorithm> // copy
-#include <iostream> // cin
-#include <iterator> // back_inserter, istream_iterator
-#include <sstream> // istringstream
-#include <string> // getline, string
-#include <vector> // vector
-#include <set>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/isomorphic-strings
 //3 ms, faster than 96.78% of C++ online submissions for Isomorphic Strings.

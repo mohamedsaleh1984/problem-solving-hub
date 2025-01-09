@@ -1,10 +1,4 @@
-
-#include <iostream>
-#include <vector>
-#include <map>
-#include <algorithm>
-using namespace std;
-
+#include "../common.h"
 
 //bool IsIncreasingOrder(vector<int> products) {
 //    if (products.size() == 1)

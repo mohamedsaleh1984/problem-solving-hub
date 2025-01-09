@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <math.h>
-#include <map>
-#include <set>
-#include <unordered_set>
-using namespace std;
+#include "../common.h"
 
 //384. Shuffle an Array
 //https://leetcode.com/problems/shuffle-an-array/

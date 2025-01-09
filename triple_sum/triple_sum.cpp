@@ -5,11 +5,13 @@ Problem:
 https://www.hackerrank.com/challenges/triple-sum/problem
 */
 
-long triplets(vector<int> a, vector<int> b, vector<int> c) {
+long triplets(vector<int> a, vector<int> b, vector<int> c)
+{
 	set<pair<int, int>> mm;
 	for (int p = 0; p < a.size(); ++p)
 		for (int q = 0; q < b.size(); ++q)
-			if (a[p] <= b[q]) {
+			if (a[p] <= b[q])
+			{
 				mm.insert(pair<int, int>(a[p], b[q]));
 			}
 
@@ -20,7 +22,6 @@ long triplets(vector<int> a, vector<int> b, vector<int> c) {
 	set<int> cSet;
 	for (int j = 0; j < c.size(); j++)
 		cSet.insert(c[j]);
-
 
 	set<int>::iterator itr2;
 	for (; itr != mm.end(); ++itr)
@@ -36,15 +37,13 @@ long triplets(vector<int> a, vector<int> b, vector<int> c) {
 	return T;
 }
 
-
 int main()
 {
-	vector<int> a = { 3, 2 ,3 };
-	vector<int> b = {1,3,5};
-	vector<int> c = { 2,3 };
+	vector<int> a = {3, 2, 3};
+	vector<int> b = {1, 3, 5};
+	vector<int> c = {2, 3};
 
 	cout << triplets(a, b, c) << endl;
 
 	return 0;
 }
-

@@ -1,10 +1,4 @@
-// RangeSum.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 
 int RangeSum(vector<int> arr, int i, int j)
 {
@@ -25,9 +19,5 @@ int main()
 	vector<int> arr{ 1,5,8,10,7,8,9 };
 	cout << RangeSum(arr, 0, 3) << endl;
 	cout << RangeSum(arr, 3, 5) << endl;
-
-
-
-
 	return 0;
 }

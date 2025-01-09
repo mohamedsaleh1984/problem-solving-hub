@@ -1,12 +1,4 @@
-// Remove Duplicate from Array.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
-
-using namespace std;
+#include "../common.h"
 
 void checkDupl(vector<int> input) {
 	set<int> dup;

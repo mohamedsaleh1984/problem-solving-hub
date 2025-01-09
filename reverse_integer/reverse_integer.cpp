@@ -1,9 +1,4 @@
-// Reverse Integer.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-#include <stack>
-using namespace std;
+#include "../common.h"
 
 int reverse(int x) {
     int digit;

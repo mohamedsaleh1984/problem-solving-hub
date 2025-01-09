@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 struct mergeSortedArrayTestCase
 {
     vector<int> nums1;

@@ -1,19 +1,4 @@
-// Reverse LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-using namespace std;
-
-class SinglyLinkedListNode {
-public:
-    int data;
-    SinglyLinkedListNode* next;
-
-    SinglyLinkedListNode(int node_data) {
-        this->data = node_data;
-        this->next = nullptr;
-    }
-};
+#include "../common.h"
 
 class SinglyLinkedList {
 public:

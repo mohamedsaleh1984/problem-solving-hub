@@ -1,6 +1,4 @@
-#include <iostream>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 int main()
 {

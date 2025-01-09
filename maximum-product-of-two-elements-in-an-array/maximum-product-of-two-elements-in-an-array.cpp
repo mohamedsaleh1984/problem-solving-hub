@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/submissions/1445365629/
 // 6 ms Beats8.50%

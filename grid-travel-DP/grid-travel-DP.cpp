@@ -1,8 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <map>
-#include <utility>
-using namespace std;
+#include "../common.h"
 
 int gridTravelUsingRec(int rows, int cols) {
 	if (rows == 1 && cols == 1) return 1;

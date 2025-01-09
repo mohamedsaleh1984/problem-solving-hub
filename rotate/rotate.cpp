@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 void rotate(vector<int>& nums, int k) {
 

@@ -1,0 +1,7 @@
+digraph G {
+	Max -> Moe -> Dina;
+	Moe -> Tolu -> Alfred;
+	Tolu -> Max -> Moe;
+	Dina -> Moe;
+	Alfred -> Dina;
+}

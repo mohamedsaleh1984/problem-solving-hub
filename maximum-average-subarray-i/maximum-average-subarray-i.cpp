@@ -28,7 +28,7 @@ public:
         // compute the sum for first Window
         for (int i = left; i < right; i++)
             curSum += nums[i];
-        
+
         setMaxAvg();
 
         while (right < len)

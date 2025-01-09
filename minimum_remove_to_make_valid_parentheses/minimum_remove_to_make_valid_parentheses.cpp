@@ -1,14 +1,13 @@
-#include <iostream>
-#include <stack>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
-string minRemoveToMakeValid(string s) {
+string minRemoveToMakeValid(string s)
+{
 
     std::vector<char> v(s.begin(), s.end());
     stack<int> stkIndex;
 
-    for (int i = 0; i < v.size(); i++) {
+    for (int i = 0; i < v.size(); i++)
+    {
         if (v[i] == '(')
         {
             stkIndex.push(i);
@@ -17,24 +16,25 @@ string minRemoveToMakeValid(string s) {
         {
             stkIndex.pop();
         }
-        else if (v[i] == ')') {
+        else if (v[i] == ')')
+        {
             v[i] = '\0';
         }
     }
 
-    while (!stkIndex.empty()) {
+    while (!stkIndex.empty())
+    {
         int i = stkIndex.top();
         stkIndex.pop();
         v[i] = '\0';
     }
 
-std::string strResult(v.begin(), v.end());
+    std::string strResult(v.begin(), v.end());
 
-
-return strResult;
-    }
+    return strResult;
+}
 
 int main()
 {
-	return 0;
+    return 0;
 }

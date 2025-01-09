@@ -1,0 +1,5 @@
+dot -Tpng fileName.dot  > fileName.png
+
+
+dot -Tpng directed-graph.dot  > directed-graph.png
+dot -Tpdf undirected-graph.dot  > undirected-graph.png

@@ -10,12 +10,11 @@ public:
             printf("%d * %d = %d\n", n, i, (n * i));
         }
     }
+    
     void printTableRec(int n, int i)
     {
         if (i > 10)
-        {
             return;
-        }
     
         printf("%d * %d = %d\n", n, i, (n * i));
         printTableRec(n, i+1);

@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/single-number/submissions/1449027291/?envType=study-plan-v2&envId=leetcode-75
 /* 23ms Beats 6.27%*/

@@ -1,14 +1,4 @@
-#include <iostream>
-#include <stdio.h>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <utility>
-#include <unordered_map>
-#include <map>
-#include <climits>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/minimum-absolute-difference/
 // 15ms Beats 86.94%

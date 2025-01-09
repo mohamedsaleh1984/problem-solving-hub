@@ -1,15 +1,4 @@
-// Group Anagrams.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <algorithm> // copy
-#include <iostream> // cin
-#include <iterator> // back_inserter, istream_iterator
-#include <sstream> // istringstream
-#include <string> // getline, string
-#include <vector> // vector
-#include <set>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 std::vector<std::vector<std::string>> group_anagrams(std::vector<std::string> strs) {
 	std::map<std::string, std::vector<string>> map;

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/559/
 class Solution {

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 
 // https://leetcode.com/problems/integer-to-roman/?envType=problem-list-v2&envId=math
 class Solution
@@ -100,13 +97,14 @@ void runTestCases(vector<TestCase> ex)
 {
     for (int i = 0; i < ex.size(); i++)
     {
-        runTest(ex.at(i).num,ex.at(i).expectedOutput);
+        runTest(ex.at(i).num, ex.at(i).expectedOutput);
     }
 }
 
 int main(void)
 {
-    vector<TestCase> vec = {{3749,"MMMDCCXLIX"}
+    vector<TestCase> vec = {
+        {3749, "MMMDCCXLIX"}
         //,{58,"LVIII"},{1994,"MCMXCIV"}
     };
     runTestCases(vec);

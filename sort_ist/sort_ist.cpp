@@ -1,19 +1,5 @@
-// Sort ist.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "../common.h"
 
-#include <iostream>
-
-class SinglyLinkedListNode {
-public:
-    int data;
-    SinglyLinkedListNode* next;
-
-    SinglyLinkedListNode(int node_data) {
-        this->data = node_data;
-        this->next = nullptr;
-    }
-
-};
 class SinglyLinkedList {
 public:
     SinglyLinkedListNode* head;

@@ -1,25 +1,7 @@
-// Longest Substring without Repeating Characters.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "../common.h"
 
-#include <iostream>
-#include <set>
-#include <string>
-using namespace std;
-
-
-void viewSet(set<char> bb) {
-    std::set<char>::iterator setIter;
-    setIter = bb.begin();
-    cout << "{ ";
-    while (setIter != bb.end()) {
-        cout << *setIter << " ";
-        setIter++;
-    }
-    cout << " }";
-}
-
-
-int longest_substring_without_repeating_characters(std::string s) {
+int longest_substring_without_repeating_characters(std::string s)
+{
     if (s.length() == 1)
         return 1;
 
@@ -39,14 +21,14 @@ int longest_substring_without_repeating_characters(std::string s) {
             window.erase(s[start]);
             start++;
         }
-        maxLength = max(maxLength, end-start);
+        maxLength = max(maxLength, end - start);
     }
-    
-    
+
     return maxLength;
 }
 
-int main() { 
+int main()
+{
     string s = "abccabcabcc";
     int res = longest_substring_without_repeating_characters(s);
     std::cout << res << '\n';

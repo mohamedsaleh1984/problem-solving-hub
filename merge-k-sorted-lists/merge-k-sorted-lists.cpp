@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/merge-k-sorted-lists/
 // 0ms Beats 100.00%

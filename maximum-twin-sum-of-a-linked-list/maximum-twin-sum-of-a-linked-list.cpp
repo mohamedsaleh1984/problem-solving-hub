@@ -1,17 +1,9 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
+ #include "../common.h"
+
  // https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/submissions/?envType=study-plan-v2&envId=leetcode-75
  // 4ms Beats 62.88%
  // 12/08/2024
- 
+
 class Solution {
 public:
     int pairSum(ListNode* head) {
@@ -28,9 +20,6 @@ public:
             l++;
             r--;
         }
-
         return sum;
-    }
-
-    
+    }    
 };

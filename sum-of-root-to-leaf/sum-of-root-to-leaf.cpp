@@ -1,8 +1,4 @@
-#include <iostream>
-#include <queue>
-#include <malloc.h>
-using namespace std;
-
+#include "../common.h"
 
 struct node {
 	int data;

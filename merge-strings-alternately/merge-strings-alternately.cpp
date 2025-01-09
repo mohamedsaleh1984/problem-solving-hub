@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 // 12/01/2024
 // https://leetcode.com/problems/merge-strings-alternately

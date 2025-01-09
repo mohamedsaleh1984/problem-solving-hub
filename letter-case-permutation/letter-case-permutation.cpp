@@ -1,48 +1,55 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <stack>
-#include <cctype>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/letter-case-permutation
 // 11 ms Beats 21.37%
 
-class Solution {
+class Solution
+{
 private:
     vector<string> vec;
     stack<string> wordsInProcess;
 
-    void toLower(string& s){
+    void toLower(string &s)
+    {
         int len = s.length();
-        for(int i = 0 ; i < len ; i++){
-            if(isalpha(s[i])){
+        for (int i = 0; i < len; i++)
+        {
+            if (isalpha(s[i]))
+            {
                 s[i] = tolower(s[i]);
             }
         }
     }
+
 public:
-    vector<string> letterCasePermutation(string s) {
+    vector<string> letterCasePermutation(string s)
+    {
         int len = s.length();
-      
+
         if (len == 0)
             return vec;
-  
+
         toLower(s);
-        
+
         bool called = false;
 
-        for (int i = 0; i < len; i++) {
-            if (isalpha(s[i])) {
+        for (int i = 0; i < len; i++)
+        {
+            if (isalpha(s[i]))
+            {
                 called = true;
                 letterCasePermutationHelper(s, i);
             }
         }
 
-        if (!called) {
+        if (!called)
+        {
             vec.push_back(s);
-        } else {
-            while (!wordsInProcess.empty()) {
+        }
+        else
+        {
+            while (!wordsInProcess.empty())
+            {
                 vec.push_back(wordsInProcess.top());
                 wordsInProcess.pop();
             }
@@ -51,7 +58,8 @@ public:
         return vec;
     }
 
-    vector<string> createInstances(string& s, int index) {
+    vector<string> createInstances(string &s, int index)
+    {
         vector<string> vec;
         string w1 = s;
         string w2 = s;
@@ -62,22 +70,27 @@ public:
         return vec;
     }
 
-    void letterCasePermutationHelper(string& s, int index) {
-        if (wordsInProcess.empty()) {
+    void letterCasePermutationHelper(string &s, int index)
+    {
+        if (wordsInProcess.empty())
+        {
             vector<string> vec = createInstances(s, index);
             wordsInProcess.push(vec[0]);
             wordsInProcess.push(vec[1]);
-
-        } else {
+        }
+        else
+        {
             vector<vector<string>> vecx;
-            while (!wordsInProcess.empty()) {
+            while (!wordsInProcess.empty())
+            {
                 string word = wordsInProcess.top();
                 vector<string> vec = createInstances(word, index);
                 vecx.push_back(vec);
                 wordsInProcess.pop();
             }
 
-            for (int i = 0; i < vecx.size(); i++) {
+            for (int i = 0; i < vecx.size(); i++)
+            {
                 wordsInProcess.push(vecx[i][0]);
                 wordsInProcess.push(vecx[i][1]);
             }

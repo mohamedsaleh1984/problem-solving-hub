@@ -1,11 +1,4 @@
-// Single Number - HashMap.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <unordered_set>
-using namespace std;
+#include "../common.h"
 
 int singleNumber(vector<int>& nums) {
 

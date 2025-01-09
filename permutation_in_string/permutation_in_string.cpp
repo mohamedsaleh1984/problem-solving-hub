@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
-#include <stdbool.h>
-using namespace std;
-
+#include "../common.h"
 //https://leetcode.com/problems/permutation-in-string
 bool checkMapsEquality(map<char, int> m1, map<char, int> m2) {
 	map<char, int>::iterator it1 = m1.begin();

@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <string>
-#include <algorithm> // std::reverse
-#include <vector>    // std::vector
-using namespace std;
+#include "../common.h"
 
 struct TestCase
 {
@@ -53,7 +48,7 @@ public:
             chunk.push_back(toupper(s[i]));
             if (groupIndex == 1 && chunk.length() == firstGrpElmCount)
             {
-                 if (groupIndex != groups)
+                if (groupIndex != groups)
                     chunk.push_back('-');
 
                 groupIndex++;
@@ -67,7 +62,7 @@ public:
                     chunk.push_back('-');
                 strNew += chunk;
                 chunk = "";
-                 groupIndex++;
+                groupIndex++;
             }
         }
         return strNew;
@@ -104,7 +99,7 @@ int main(void)
         // {"r", 1, "R"},
         // {"2", 2, "2"},
         // {"a-a-a-a-",1,"A-A-A-A"},
-        {"a-----a",2,"AA"}};
+        {"a-----a", 2, "AA"}};
     runTestCases(vec);
     return 0;
 }

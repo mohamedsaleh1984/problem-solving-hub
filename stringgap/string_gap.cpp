@@ -1,7 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+#include "../common.h"
+
 /*
 You are given a string S of length N consisting of characters 'a' and 'b' with additional empty gaps represented
 by '?'. Your task is to replace every such gap with either an 'a' character or a 'b' character so that the
@@ -29,10 +27,7 @@ Write an efficient algorithm for the following assumptions:
 string S consists only of the following characters: "a", "b" and/or "?";
 N is an integer within the range [1..100,000].
 */
-#include <iostream>
-#include <string>
-#include <algorithm>
-using namespace std;
+ 
 
 pair<string, int> minimizeLongestFragment(string S) {
     int N = S.length();

@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-using namespace std;
-
+#include "../common.h"
 //https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 //0 ms Beats 100.00%
 // 

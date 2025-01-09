@@ -1,12 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/symmetric-tree/
-
-
 
 struct TreeNode
 {

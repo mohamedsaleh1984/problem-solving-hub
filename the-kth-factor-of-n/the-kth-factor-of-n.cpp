@@ -1,10 +1,4 @@
-
-#include <iostream>
-#include <set>
-#include <vector>
-#include <algorithm>
-using namespace std;
-
+#include "../common.h"
 
 // https://leetcode.com/problems/the-kth-factor-of-n
 // 0ms Beats 100.00%

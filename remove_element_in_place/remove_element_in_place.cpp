@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/remove-element/
 class Solution {

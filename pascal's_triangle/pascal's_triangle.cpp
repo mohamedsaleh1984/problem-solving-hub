@@ -1,21 +1,24 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-//https://leetcode.com/problems/pascals-triangle/
-//Runtime: 4 ms, faster than 24.36% of C++ online submissions for Pascal's Triangle.
-class Solution {
+#include "../common.h"
+
+// https://leetcode.com/problems/pascals-triangle/
+// Runtime: 4 ms, faster than 24.36% of C++ online submissions for Pascal's Triangle.
+class Solution
+{
 public:
-	vector<vector<int>> generate(int numRows) {
+	vector<vector<int>> generate(int numRows)
+	{
 		vector<vector<int>> result;
-		if (numRows == 1) {
-			vector<int> vec = { 1 };
+		if (numRows == 1)
+		{
+			vector<int> vec = {1};
 			result.push_back(vec);
 			return result;
 		}
 		else
 		{
-			for (int i = 0; i < numRows; i++) {
-				vector<int> vec(i+1);
+			for (int i = 0; i < numRows; i++)
+			{
+				vector<int> vec(i + 1);
 				result.push_back(vec);
 			}
 			result[0][0] = 1;
@@ -23,13 +26,17 @@ public:
 			result[1][1] = 1;
 		}
 
-		for (int i = 2; i < numRows; i++) {
-			for (int j = 0; j < result[i].size(); j++) {
-				if (j == 0 || j == result[i].size() - 1) {
+		for (int i = 2; i < numRows; i++)
+		{
+			for (int j = 0; j < result[i].size(); j++)
+			{
+				if (j == 0 || j == result[i].size() - 1)
+				{
 					result[i][j] = 1;
 				}
-				else {
-					result[i][j] = result[i - 1][j-1] + result[i - 1][j];
+				else
+				{
+					result[i][j] = result[i - 1][j - 1] + result[i - 1][j];
 				}
 			}
 		}

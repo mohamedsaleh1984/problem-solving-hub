@@ -4,7 +4,6 @@
 #include <list>
 #include <vector>
 #include <queue>
-#include <queue>
 #include <climits>
 #include <algorithm>
 #include <map>
@@ -15,20 +14,23 @@
 #include <chrono>
 #include <thread>
 #include <string>
-#include  <bits/stdc++.h>
+#include <bits/stdc++.h>
 #include <chrono>
 #include <functional>
-
+#include <malloc.h>
 
 using namespace std;
+
 typedef pair<int, int> iPair;
 
-class SinglyLinkedListNode {
+class SinglyLinkedListNode
+{
 public:
     int data;
-    SinglyLinkedListNode* next;
+    SinglyLinkedListNode *next;
 
-    SinglyLinkedListNode(int node_data) {
+    SinglyLinkedListNode(int node_data)
+    {
         this->data = node_data;
         this->next = nullptr;
     }
@@ -78,52 +80,67 @@ void printvector(vector<vector<S>> vecx)
 {
     cout << "[";
     for (size_t i = 0; i < vecx.size(); i++)
-    {
         printvector(vecx[i]);
-        // if (i != vecx.size() - 1)
-        //     cout << ",";
-    }
 
     cout << "]\n";
 }
 
-void inorder(TreeNode* root){
-    if(root == NULL)
+template <class T>
+void viewSet(set<T> bb) {
+    std::set<T>::iterator setIter;
+    setIter = bb.begin();
+    cout << "{ ";
+    while (setIter != bb.end()) {
+        cout << *setIter << " ";
+        setIter++;
+    }
+    cout << " }";
+}
+
+
+void inorder(TreeNode *root)
+{
+    if (root == NULL)
         return;
     inorder(root->left);
     cout << root->val << " ";
     inorder(root->right);
 }
 
-void preorder(TreeNode* root){
-    if(root == NULL)
+void preorder(TreeNode *root)
+{
+    if (root == NULL)
         return;
     cout << root->val << " ";
     inorder(root->left);
     inorder(root->right);
 }
 
-void postorder(TreeNode* root){
-if(root == NULL)
+void postorder(TreeNode *root)
+{
+    if (root == NULL)
         return;
     inorder(root->left);
     inorder(root->right);
     cout << root->val << " ";
 }
-
 
 template <typename Func, typename... Args>
-auto measureExecutionTime(Func&& func, Args&&... args) {
+auto measureExecutionTime(Func &&func, Args &&...args)
+{
     auto start = std::chrono::high_resolution_clock::now();
 
     // void function
-    if constexpr (std::is_void_v<std::invoke_result_t<Func, Args...>>) {
+    if constexpr (std::is_void_v<std::invoke_result_t<Func, Args...>>)
+    {
         // Handle void return type
         std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration = end - start;
         return duration.count(); // Only return the duration for void functions
-    } else {
+    }
+    else
+    {
         // Handle non-void return type
         auto result = std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
         auto end = std::chrono::high_resolution_clock::now();
@@ -131,4 +148,29 @@ auto measureExecutionTime(Func&& func, Args&&... args) {
         return std::make_pair(result, duration.count()); // Return result and duration
     }
 }
+
+ListNode* createDummyList() {
+	ListNode* n6 = new ListNode(6);
+	ListNode* n5 = new ListNode(5);
+	n5->next = n6;
+	ListNode* n4 = new ListNode(4);
+	n4->next = n5;
+	ListNode* n3 = new ListNode(3);
+	n3->next = n4;
+	ListNode* n2 = new ListNode(2);
+	n2->next = n3;
+	ListNode* n1 = new ListNode(1);
+	n1->next = n2;
+
+	return n1;
+}
+
+void printList(ListNode* head) {
+	while (head != nullptr)
+	{
+		cout << head->val << " ";
+		head = head->next;
+	}
+}
+
 #endif

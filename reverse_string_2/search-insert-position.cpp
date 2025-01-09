@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/search-insert-position/
 int searchInsert(vector<int>& nums, int target) {

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/product-of-array-except-self/
 
@@ -10,8 +7,7 @@ void print(vector<int> &res)
 	for (int i = 0; i < res.size(); i++)
 		cout << res[i] << " ";
 }
-
-//19ms Beats 94.97%
+// 19ms Beats 94.97%
 vector<int> productExceptSelf2(vector<int> &nums)
 {
 	vector<int> forward(nums.size());

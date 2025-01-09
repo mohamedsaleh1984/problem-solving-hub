@@ -1,13 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <map>
-using namespace std;
-//https://leetcode.com/problems/majority-element/
-class Solution {
+#include "../common.h"
+
+// https://leetcode.com/problems/majority-element/
+class Solution
+{
 public:
-    int majorityElement(vector<int>& nums) {
+    int majorityElement(vector<int> &nums)
+    {
         map<int, int> data;
-        for (auto item : nums) {
+        for (auto item : nums)
+        {
             data[item]++;
         }
 
@@ -16,7 +17,8 @@ public:
         int numToReturn = 0;
         while (it != data.end())
         {
-            if (it->second >= range) {
+            if (it->second >= range)
+            {
                 numToReturn = it->first;
             }
             it++;
@@ -25,8 +27,7 @@ public:
         return numToReturn;
     }
 };
+
 int main()
 {
-     
 }
- 

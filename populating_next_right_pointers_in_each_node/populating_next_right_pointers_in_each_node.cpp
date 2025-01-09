@@ -1,8 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <stack>
-using namespace std;
+#include "../common.h"
+
 //https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 
 class Node {

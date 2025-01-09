@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
-
+#include "../common.h"
 
 // https://leetcode.com/problems/matrix-diagonal-sum/submissions/1445264251/
 // 0ms Beats 100.00%
