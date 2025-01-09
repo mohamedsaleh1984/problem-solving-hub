@@ -1,6 +1,5 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
+
 //https://leetcode.com/problems/triangle/
 //hint: start from the bottom up
 class Solution {
