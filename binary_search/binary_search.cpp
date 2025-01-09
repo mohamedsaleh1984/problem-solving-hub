@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector> 
-using namespace std;
+#include "../common.h"
 
 int binary_search(std::vector<int> arr, int target) {
     int result = -1;
