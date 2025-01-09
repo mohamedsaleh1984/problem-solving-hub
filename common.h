@@ -23,6 +23,17 @@
 using namespace std;
 typedef pair<int, int> iPair;
 
+class SinglyLinkedListNode {
+public:
+    int data;
+    SinglyLinkedListNode* next;
+
+    SinglyLinkedListNode(int node_data) {
+        this->data = node_data;
+        this->next = nullptr;
+    }
+};
+
 struct ListNode
 {
     int val;
