@@ -1,7 +1,4 @@
-#include <vector>
-#include <iostream>
-using namespace std;
-
+#include "../common.h"
 
 class Solution {
 public:
