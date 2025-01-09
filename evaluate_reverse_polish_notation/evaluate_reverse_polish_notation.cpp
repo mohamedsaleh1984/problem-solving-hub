@@ -1,12 +1,5 @@
-// Evaluate Reverse Polish Notation.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "../common.h"
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <iomanip>
-#include <stack>
-using namespace std;
 /*
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
 Runtime: 20 ms, faster than 24.82% of C++ online submissions for Evaluate Reverse Polish Notation.
