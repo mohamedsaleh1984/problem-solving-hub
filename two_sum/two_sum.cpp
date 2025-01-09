@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/two-sum/
 //6ms Beats 88.40%
