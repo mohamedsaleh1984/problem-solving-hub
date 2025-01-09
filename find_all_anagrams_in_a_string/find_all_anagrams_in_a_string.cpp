@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
-#include <stdbool.h>
-using namespace std;
+#include "../common.h"
 
 //https://leetcode.com/problems/find-all-anagrams-in-a-string/
 //TODO: Fix TLE issue
