@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-
-using namespace std;
+#include "../common.h"
 
 int main()
 {
