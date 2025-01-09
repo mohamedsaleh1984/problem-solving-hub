@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <vector>
-#include <set>
 #include "../common.h"
-using namespace std;
 
 // https://leetcode.com/problems/combinations/submissions/1479566243/
 // 12/15/2024
