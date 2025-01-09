@@ -1,7 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
+
 //https://www.lintcode.com/problem/659/
 /*
 Description
