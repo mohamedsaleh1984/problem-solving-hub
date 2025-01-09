@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-using namespace std;
-
+#include "../common.h"
 /*
 https://leetcode.com/problems/contains-duplicate-ii/
 133ms Beats31.60%
