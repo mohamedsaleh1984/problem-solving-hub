@@ -1,8 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <vector>
-#include <set>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/find-the-difference-of-two-arrays/submissions/1472802239/?envType=study-plan-v2&envId=leetcode-75
 // 27ms Beats 47.72%
