@@ -1,8 +1,4 @@
-#include <unordered_set>
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "../common.h"
 //https://leetcode.com/problems/contains-duplicate/
 //98ms Beats42.48%
 
