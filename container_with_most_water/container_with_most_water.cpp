@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "../common.h"
 // https://leetcode.com/problems/container-with-most-water
 // 3 ms Beats 34.97%
 int maxArea(vector<int>& height) {
