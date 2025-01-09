@@ -1,9 +1,4 @@
-#include <iostream>
-#include <set>
-#include <map>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "../common.h"
 
 class Solution {
 public:
