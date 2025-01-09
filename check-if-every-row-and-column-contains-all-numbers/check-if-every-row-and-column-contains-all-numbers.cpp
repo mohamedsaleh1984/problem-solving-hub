@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <numeric>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/check-if-every-row-and-column-contains-all-numbers/
 // 32 ms Beats 76.66%
