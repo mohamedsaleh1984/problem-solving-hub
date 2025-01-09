@@ -1,10 +1,6 @@
 ﻿// Codility_01.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
+#include "../common.h"
 
 int solution(vector<int> A)
 {
