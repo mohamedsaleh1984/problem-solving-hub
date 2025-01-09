@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <stack>
-using namespace std;
+#include "../common.h"
 
 class SetOfStacks {
 public:
