@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <iomanip>
-using namespace std;
+#include "../common.h"
 
 // https://leetcode.com/problems/check-if-matrix-is-x-matrix/
 //  0ms Beats 100.00%
