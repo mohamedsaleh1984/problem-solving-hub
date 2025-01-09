@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <vector>
-#include <map>
-using namespace std;
+#include "../common.h"
 
 /*
  https://leetcode.com/problems/top-k-frequent-elements
