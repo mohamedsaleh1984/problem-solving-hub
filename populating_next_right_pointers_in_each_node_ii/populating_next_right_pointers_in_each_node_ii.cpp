@@ -1,23 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <stack>
-using namespace std;
+#include "../common.h"
 
-// https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
-
-class Node
-{
-public:
-    int val;
-    Node *left;
-    Node *right;
-    Node *next;
-    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
-    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
-    Node(int _val, Node *_left, Node *_right, Node *_next)
-        : val(_val), left(_left), right(_right), next(_next) {}
-};
+/*
+ https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+ Runtime: 22ms Beats 7.17%
+ */
 
 class Solution
 {

@@ -1,7 +1,7 @@
 #include "../common.h"
 
 // https://leetcode.com/problems/letter-case-permutation
-// 11 ms Beats 21.37%
+// Runtime: 11 ms Beats 21.37%
 
 class Solution
 {
