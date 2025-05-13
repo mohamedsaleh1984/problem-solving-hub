@@ -2,6 +2,7 @@
 
 /*
 https://leetcode.com/problems/sort-characters-by-frequency/
+19ms Beats 5.25%
 */
 
 string frequencySort(string s) {
